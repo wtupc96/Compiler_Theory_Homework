@@ -1,0 +1,119 @@
+\documentclass[]{ctexart}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage[space]{grffile} % For spaces in paths
+\usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+\patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother
+%opening
+\title{编译原理 \\ 作业 1}
+\author{软件42 \\ 欧阳鹏程 \\ 2141601030}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item[3.7] 构造下列正规式相应的DFA
+	\begin{center}
+		$1(0|1)^{*}101$ \\
+		$1(1010^{*}|1(010)^{*}1)^{*}0$ \\
+		$0^{*}10^{*}10^{*}10^{*}$ \\
+		$(00|11)^{*}((01|10)(00|11)^{*}(01|10)(00|11)^{*})^{*}$
+	\end{center}
+
+	\item[3.9] 对下面情况给出DFA及正规表达式：
+	\begin{enumerate}
+		\item[(1)] \{0,1\}上的含有子串010的所有串；
+		\item[(2)] \{0,1\}上不含字串010的所有串。
+	\end{enumerate}
+
+	\item[3.12] 将图3.18的(a)和(b)分别确定化和最少化。
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-1.725)(6.4,1.725)
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.1](2.8,0.85){0.4}
+			\rput(2.8,0.85){0}
+			\psarc[linecolor=black, linewidth=0.02, dimen=outer](2.8,0.05){0.8}{-235.0}{60.0}
+			\psline[linecolor=black, linewidth=0.02](3.2,0.45)(3.2,0.85)(3.6,0.85)(3.2,0.85)(3.2,0.85)
+			\rput(2.8,-0.75){a}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](6.0,0.85){0.4}
+			\rput(6.0,0.85){1}
+			\psbezier[linecolor=black, linewidth=0.02](2.8,1.25)(2.8,1.25)(3.4,1.65)(4.4,1.65)(5.4,1.65)(6.4,1.25)(6.0,1.25)
+			\psbezier[linecolor=black, linewidth=0.02](2.8,0.45)(3.2,0.05)(3.2,0.05)(4.4,0.05)(5.6,0.05)(5.2,0.05)(6.0,0.45)
+			\psline[linecolor=black, linewidth=0.02](3.2,1.25)(2.8,1.25)(2.8,1.65)(2.8,1.25)
+			\psline[linecolor=black, linewidth=0.02](5.6,0.45)(6.0,0.45)(6.0,0.05)(6.0,0.05)
+			\rput(4.4,0.05){a,b}
+			\rput(4.4,1.65){a}
+			\rput(4.0,-1.55){(a)}
+			\psline[linecolor=black, linewidth=0.02, doubleline=true, doublesep=0.02](0.0,0.85)(2.0,0.85)(0.8,1.25)(0.8,1.25)
+			\end{pspicture}
+		}
+		
+			
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-3.1475)(9.680046,3.1475)
+			\psline[linecolor=black, linewidth=0.02, doubleline=true, doublesep=0.02](0.0,2.2275)(1.8219972,2.2252016)(2.4195585,2.2212684)(1.2000461,2.6275)
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](3.200046,2.2275){0.4}
+			\rput(3.200046,2.2275){0}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](5.600046,2.2275){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](8.000046,2.2275){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](3.200046,-0.5725){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](5.600046,-0.5725){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](8.000046,-0.5725){0.4}
+			\rput(3.200046,-0.5725){1}
+			\rput(5.600046,2.2275){2}
+			\rput(8.000046,2.2275){3}
+			\rput(5.600046,-0.5725){4}
+			\rput(8.000046,-0.5725){5}
+			\psline[linecolor=black, linewidth=0.02](3.6000462,2.2275)(5.200046,2.2275)(5.200046,2.2275)
+			\psline[linecolor=black, linewidth=0.02](3.6000462,-0.5725)(5.200046,-0.5725)(5.200046,-0.5725)
+			\psline[linecolor=black, linewidth=0.02](3.200046,-0.1725)(5.600046,1.8275)(5.600046,1.8275)
+			\psline[linecolor=black, linewidth=0.02](3.200046,1.8275)(5.600046,-0.1725)(5.600046,-0.1725)
+			\psbezier[linecolor=black, linewidth=0.02](2.800046,2.2275)(2.400046,1.4275)(2.400046,1.6275)(2.400046,0.6275)(2.400046,-0.3725)(2.400046,-0.1725)(2.800046,-0.5725)
+			\psbezier[linecolor=black, linewidth=0.02](5.600046,2.6275)(6.400046,3.0275)(5.800046,3.0275)(6.800046,3.0275)(7.800046,3.0275)(7.200046,3.0275)(8.000046,2.6275)
+			\psbezier[linecolor=black, linewidth=0.02](8.000046,1.8275)(7.200046,1.4275)(7.800046,1.4275)(6.800046,1.4275)(5.800046,1.4275)(6.400046,1.4275)(5.600046,1.8275)
+			\psbezier[linecolor=black, linewidth=0.02](5.600046,-0.1725)(6.400046,0.2275)(5.600046,0.2275)(6.800046,0.2275)(8.000046,0.2275)(7.600046,0.2275)(8.000046,-0.1725)
+			\psbezier[linecolor=black, linewidth=0.02](8.000046,-0.9725)(7.600046,-1.3725)(7.800046,-1.3725)(6.800046,-1.3725)(5.800046,-1.3725)(6.400046,-1.3725)(5.600046,-0.9725)
+			\psarc[linecolor=black, linewidth=0.02, dimen=outer](8.800046,2.2275){0.8}{-150.0}{150.0}
+			\psarc[linecolor=black, linewidth=0.02, dimen=outer](8.800046,-0.5725){0.8}{-150.0}{150.0}
+			\psline[linecolor=black, linewidth=0.02](8.000046,2.6275)(7.600046,3.0275)(8.000046,2.6275)(8.000046,2.6275)(7.600046,2.6275)(8.000046,2.6275)(8.000046,2.6275)
+			\psline[linecolor=black, linewidth=0.02](8.000046,1.8275)(8.400046,1.8275)(8.000046,1.8275)(8.000046,1.4275)(8.000046,1.8275)(8.000046,1.4275)(8.000046,1.8275)(8.000046,1.8275)
+			\psline[linecolor=black, linewidth=0.02](5.600046,1.8275)(5.600046,1.4275)(5.600046,1.8275)(6.0000463,1.8275)(5.600046,1.8275)(5.600046,1.8275)
+			\psline[linecolor=black, linewidth=0.02](7.600046,-0.1725)(8.000046,-0.1725)(7.600046,-0.1725)(8.000046,-0.1725)(8.000046,0.2275)(8.000046,-0.1725)(8.000046,0.2275)(8.000046,-0.1725)
+			\psline[linecolor=black, linewidth=0.02](6.0000463,-1.3725)(5.600046,-0.9725)(6.0000463,-0.9725)(5.600046,-0.9725)(6.0000463,-1.3725)(6.0000463,-1.3725)
+			\psline[linecolor=black, linewidth=0.02](8.000046,-1.3725)(8.000046,-0.9725)(8.400046,-0.9725)(8.000046,-0.9725)(8.000046,-1.3725)(8.000046,-1.3725)
+			\psline[linecolor=black, linewidth=0.02](5.200046,2.2275)(4.800046,2.6275)(5.200046,2.2275)(4.800046,1.8275)(5.200046,2.2275)(5.200046,2.2275)
+			\psline[linecolor=black, linewidth=0.02](3.200046,1.8275)(3.200046,1.4275)(3.200046,1.8275)(3.6000462,1.8275)(3.200046,1.8275)
+			\psline[linecolor=black, linewidth=0.02](3.200046,0.2275)(3.200046,-0.1725)(3.6000462,-0.1725)(3.6000462,-0.1725)
+			\psline[linecolor=black, linewidth=0.02](5.200046,-0.5725)(4.800046,-0.1725)(5.200046,-0.5725)(4.800046,-0.9725)(5.200046,-0.5725)(5.200046,-0.5725)
+			\psline[linecolor=black, linewidth=0.02](2.400046,-0.5725)(2.800046,-0.5725)(2.800046,-0.1725)(2.800046,-0.5725)(2.400046,-0.5725)(2.800046,-0.5725)
+			\psline[linecolor=black, linewidth=0.02](3.6000462,-0.9725)(3.6000462,-0.5725)(4.0000463,-0.9725)(3.6000462,-0.5725)(3.6000462,-0.9725)(3.6000462,-0.9725)
+			\rput(2.400046,0.6275){a}
+			\rput(4.400046,2.2275){b}
+			\rput(4.0000463,1.4275){a}
+			\rput(3.6000462,0.2275){a}
+			\rput(4.400046,-0.5725){b}
+			\rput(6.800046,3.0275){b}
+			\rput(6.800046,1.4275){b}
+			\rput(9.600046,2.2275){a}
+			\rput(9.600046,-0.5725){a}
+			\rput(6.800046,0.2275){b}
+			\rput(6.800046,-1.3725){b}
+			\rput(3.200046,-2.1725){a}
+			\psarc[linecolor=black, linewidth=0.02, dimen=outer](3.200046,-1.3725){0.8}{-245.0}{60.0}
+			\rput(6.0000463,-2.9725){(b)}
+			\end{pspicture}
+		}
+	\end{center}
+	
+	\item[3.14] 构造一个DFA，它接收$\Sigma=\{0,1\}$上所有满足如下条件的字符串：每个1都有0直接跟在右边。
+		
+\end{enumerate}
+
+\end{document}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.2.28)  6 APR 2017 22:29
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.2.28)  6 APR 2017 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1549,14 +1549,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 22.
  [1
 
-] [2] (./1Compiler_Theory.aux) ) 
+] (./1Compiler_Theory.aux) ) 
 Here is how much of TeX's memory you used:
- 29633 strings out of 493591
- 590861 string characters out of 6148418
- 651932 words of memory out of 5000000
- 32712 multiletter control sequences out of 15000+600000
- 7558 words of font info for 47 fonts, out of 8000000 for 9000
+ 29631 strings out of 493591
+ 590799 string characters out of 6148418
+ 653022 words of memory out of 5000000
+ 32711 multiletter control sequences out of 15000+600000
+ 7550 words of font info for 46 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 65i,6n,78p,10466b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,6n,78p,10466b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 1Compiler_Theory.pdf (2 pages).
+Output written on 1Compiler_Theory.pdf (1 page).

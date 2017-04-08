@@ -1,0 +1,775 @@
+\paragraph{答：}
+\begin{itemize}
+	\item 首先画出对应的NFA：\\
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-0.88920504)(8.0,0.88920504)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](1.2,-0.489205){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.8,-0.489205){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](4.4,-0.489205){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.0,-0.489205){0.4}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.0,-0.489205)(0.8,-0.489205)(0.8,-0.489205)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,-0.489205)(2.4,-0.489205)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.2,-0.489205)(4.0,-0.489205)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.8,-0.489205)(5.6,-0.489205)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,-0.489205)(7.2,-0.489205)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](7.6,-0.489205){0.4}
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,-0.489205)(1.5679497,0.06549518)(1.6837722,-0.6378883)(2.0,0.3107949829101562)(2.3162277,1.2594783)(1.8,0.710795)(2.8,0.710795)(3.8,0.710795)(3.2837722,1.2594783)(3.6,0.31079498)(3.9162278,-0.6378883)(4.03205,0.06549518)(3.2,-0.489205)
+			\rput(1.2,-0.489205){X}
+			\rput(2.8,-0.489205){A}
+			\rput(4.4,-0.489205){B}
+			\rput(6.0,-0.489205){C}
+			\rput(7.6,-0.489205){Y}
+			\rput(2.8,0.710795){0,1}
+			\rput[t](2.0,-0.489205){1}
+			\rput[t](3.6,-0.489205){1}
+			\rput[t](5.2,-0.489205){0}
+			\rput[t](6.8,-0.489205){1}
+			\end{pspicture}
+		}
+	\end{center}
+	
+	将该NFA确定化：
+	\begin{table}[H]
+		\caption{状态转换矩阵}
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$I$ & $I_{0}$ & $I_{1}$ \\\hline
+			\textcolor{green}{$T_{0}$} \{X\} & \{\} & \textcolor{green}{$T_{1}$} \{A\} \\\hline
+			\textcolor{green}{$T_{1}$} \{A\} & \textcolor{green}{$T_{1}$} \{A\} & \textcolor{green}{$T_{2}$} \{A,B\} \\\hline
+			\textcolor{green}{$T_{2}$} \{A,B\} & \textcolor{green}{$T_{3}$} \{A,C\} & \textcolor{green}{$T_{2}$} \{A,B\} \\\hline
+			\textcolor{green}{$T_{3}$} \{A,C\} & \textcolor{green}{$T_{1}$} \{A\} & \textcolor{green}{$T_{4}$} \{A,B,Y\} \\\hline
+			\textcolor{green}{$T_{4}$} \{A,B,Y\} & \textcolor{green}{$T_{3}$} \{A,C\} & \textcolor{green}{$T_{2}$} \{A,B\} \\\hline
+		\end{tabular}
+	\end{table}
+	得到DFA：\\
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-1.22)(7.2,1.22)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.4,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.6,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](6.8,0.0){0.4}
+			\rput(0.4,0.0){$T_{0}$}
+			\rput(2.0,0.0){$T_{1}$}
+			\rput(3.6,0.0){$T_{2}$}
+			\rput(5.2,0.0){$T_{3}$}
+			\rput(6.8,0.0){$T_{4}$}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,0.0)(1.6,0.0)(1.6,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,0.0)(3.2,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,0.0)(4.8,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,0.0)(6.4,0.0)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.2,0.0)(2.9574645,-0.9701425)(3.2,-0.8)(3.6,-0.8)(4.0,-0.8)(4.2425356,-0.9701425)(4.0,0.0)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,-0.4)(5.2,-1.2)(4.6,-1.2)(3.6,-1.2)(2.6,-1.2)(2.0,-1.2)(2.0,-0.4)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,0.4)(6.8,1.2)(6.2,1.2)(5.2,1.2)(4.2,1.2)(3.6,1.2)(3.6,0.4)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,0.0)(2.4,0.8)(2.4,1.2)(2.0,1.2)(1.6,1.2)(1.6,0.8)(1.6,0.0)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,0.4)(6.8,0.8)(7.0,0.8)(6.0,0.8)(5.0,0.8)(5.2,0.8)(5.2,0.4)
+			\rput[b](1.2,0.0){1}
+			\rput[b](2.8,0.0){1}
+			\rput[b](4.4,0.0){0}
+			\rput[b](6.0,0.0){1}
+			\rput[b](3.6,-0.8){1}
+			\rput[b](3.6,-1.2){0}
+			\rput[t](2.0,1.2){0}
+			\rput[t](6.0,0.8){0}
+			\rput[t](5.2,1.2){1}
+			\end{pspicture}
+		}
+	\end{center}
+	
+	\item 首先画出NFA为：\\
+	\begin{center}
+		\psscalebox{0.8 0.8} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-3.6)(10.4,3.6)
+			\psline[linecolor=black, linewidth=0.04, doubleline=true, doublesep=0.12, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.0,0.0)(1.6,0.0)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](4.0,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.0,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](8.0,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](10.0,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,-1.6){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.0,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.8,-1.6){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,1.6){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.8,3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.8,1.6){0.4}
+			\rput(2.0,0.0){X}
+			\rput(4.0,0.0){A}
+			\rput(6.0,0.0){C}
+			\rput(8.0,0.0){K}
+			\rput(10.0,0.0){Y}
+			\rput(5.2,-1.6){D}
+			\rput(6.0,-3.2){E}
+			\rput(6.8,-1.6){F}
+			\rput(5.2,1.6){G}
+			\rput(5.2,3.2){H}
+			\rput(6.8,3.2){I}
+			\rput(6.8,1.6){J}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,0.0)(3.6,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.4,0.0)(5.6,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,0.0)(7.6,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,0.0)(9.6,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.0,-0.4)(5.2,-1.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,-2.0)(6.0,-2.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.0,-2.8)(6.8,-2.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,-1.2)(6.0,-0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.0,0.4)(5.2,1.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,2.0)(5.2,2.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,3.2)(6.4,3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,2.8)(5.6,1.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,1.6)(6.4,1.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,1.2)(6.0,0.4)
+			\rput[b](2.8,0.0){1}
+			\rput[b](5.6,-0.8){1}
+			\rput[b](5.6,-2.4){0}
+			\rput[b](6.4,-2.4){1}
+			\rput[b](7.6,-2.4){0}
+			\rput[b](8.8,0.0){0}
+			\rput[b](5.6,0.8){1}
+			\rput[b](6.0,3.2){1}
+			\rput[br](5.2,2.4){0}
+			\rput[br](6.4,2.4){0}
+			\rput[t](6.0,1.6){1}
+			\rput[b](4.8,0.0){$\varepsilon$}
+			\rput[b](6.8,0.0){$\varepsilon$}
+			\rput[b](6.4,-0.8){$\varepsilon$}
+			\rput[b](6.4,0.8){$\varepsilon$}
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,-2.0)(7.3547,-2.8320503)(7.6,-2.4)(7.6,-2.4)(7.6,-2.4)(8.03205,-2.1547003)(7.2,-1.6)
+			\end{pspicture}
+		}
+	\end{center}
+	将该NFA确定化：
+	\begin{table}[H]
+		\caption{状态转换矩阵}
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$I$ & $I_{0}$ & $I_{1}$ \\\hline
+			\textcolor{green}{$T_{0}$} \{X\} & \{\} &
+			\textcolor{green}{$T_{1}$} \{A,C,K\} \\\hline
+			
+			\textcolor{green}{$T_{1}$} \{A,C,K\} & \textcolor{green}{$T_{2}$} \{Y\} &
+			\textcolor{green}{$T_{3}$} \{D,G\} \\\hline
+			
+			\textcolor{green}{$T_{2}$} \{Y\} & \{\} &
+			\{\} \\\hline
+			
+			\textcolor{green}{$T_{3}$} \{D,G\} & \textcolor{green}{$T_{4}$} \{E,H\} &
+			\textcolor{green}{$T_{5}$} \{J,C,K\} \\\hline
+			
+			\textcolor{green}{$T_{4}$} \{E,H\} & \{\} &
+			\textcolor{green}{$T_{6}$} \{I,F,C,K\} \\\hline
+			
+			\textcolor{green}{$T_{5}$} \{J,C,K\} & \textcolor{green}{$T_{2}$} \{Y\} &
+			\textcolor{green}{$T_{3}$} \{D,G\} \\\hline
+			
+			\textcolor{green}{$T_{6}$} \{I,F,C,K\} & \textcolor{green}{$T_{7}$} \{G,F,C,K,Y\} &
+			\textcolor{green}{$T_{3}$} \{D,G\} \\\hline
+			
+			\textcolor{green}{$T_{7}$} \{G,F,C,K,Y\} & \textcolor{green}{$T_{8}$} \{H,F,C,K,Y\} &
+			\textcolor{green}{$T_{9}$} \{J,C,K,D,G\} \\\hline
+			
+			\textcolor{green}{$T_{8}$} \{H,F,C,K,Y\} & \textcolor{green}{$T_{10}$} \{F,C,K,Y\} &
+			\textcolor{green}{$T_{11}$} \{I,D,G\} \\\hline
+			
+			\textcolor{green}{$T_{9}$} \{J,C,K,D,G\} & \textcolor{green}{$T_{12}$} \{Y,E,H\} &
+			\textcolor{green}{$T_{9}$} \{D,G,J,C,K\} \\\hline
+			
+			\textcolor{green}{$T_{10}$} \{F,C,K,Y\} & \textcolor{green}{$T_{10}$} \{F,C,K,Y\} &
+			\textcolor{green}{$T_{3}$} \{D,G\} \\\hline
+			
+			\textcolor{green}{$T_{11}$} \{I,D,G\} & \textcolor{green}{$T_{13}$} \{G,E,H\} &
+			\textcolor{green}{$T_{5}$} \{J,C,K\} \\\hline
+			
+			\textcolor{green}{$T_{12}$} \{Y,E,H\} & \{\} &
+			\textcolor{green}{$T_{6}$} \{F,C,K,I\} \\\hline
+			
+			\textcolor{green}{$T_{13}$} \{G,E,H\} & \textcolor{green}{$T_{14}$} \{H\} &
+			\textcolor{green}{$T_{15}$} \{J,C,K,F,I\} \\\hline
+			
+			\textcolor{green}{$T_{14}$} \{H\} & \{\} &
+			\textcolor{green}{$T_{16}$} \{I\} \\\hline
+			
+			\textcolor{green}{$T_{15}$} \{J,C,K,F,I\} & \textcolor{green}{$T_{7}$} \{Y,F,C,K,G\} &
+			\textcolor{green}{$T_{3}$} \{D,G\} \\\hline
+			
+			\textcolor{green}{$T_{16}$} \{I\} & \textcolor{green}{$T_{17}$} \{G\} & \{\} \\\hline
+			
+			\textcolor{green}{$T_{17}$} \{G\} & \textcolor{green}{$T_{14}$} \{H\} &
+			\textcolor{green}{$T_{5}$} \{J,C,K\} \\\hline
+		\end{tabular}
+	\end{table}
+	得到DFA为：\\
+	\begin{center}
+		\psscalebox{0.8 0.8} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-4.420124)(13.6,4.420124)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.4,1.8001242){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,1.8001242){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](3.6,3.0001242){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.6,0.6001242){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,1.8001242){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,-0.5998758){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.8,-1.7998757){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](10.0,-0.5998758){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](11.6,-0.5998758){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](11.6,1.8001242){0.4}
+			\rput(0.4,1.8001242){$T_{0}$}
+			\rput(2.0,1.8001242){$T_{1}$}
+			\rput(3.6,3.0001242){$T_{2}$}
+			\rput(3.6,0.6001242){$T_{3}$}
+			\rput(5.2,-0.5998758){$T_{4}$}
+			\rput(5.2,1.8001242){$T_{5}$}
+			\rput(6.8,-1.7998757){$T_{6}$}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](8.4,-2.9998758){0.4}
+			\rput(8.4,-2.9998758){$T_{7}$}
+			\rput(11.6,-2.9998758){$T_{12}$}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](8.4,-0.5998758){0.4}
+			\rput(8.4,-0.5998758){$T_{8}$}
+			\rput(10.0,-0.5998758){$T_{11}$}
+			\rput(11.6,-0.5998758){$T_{13}$}
+			\rput(10.0,0.6001242){$T_{10}$}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](10.0,0.6001242){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](11.6,-2.9998758){0.4}
+			\rput(11.6,1.8001242){$T_{14}$}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](13.2,3.0001242){0.4}
+			\rput(13.2,3.0001242){$T_{16}$}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](13.2,-1.7998757){0.4}
+			\rput(13.2,-1.7998757){$T_{15}$}
+			\rput(6.8,3.0001242){$T_{17}$}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.8,3.0001242){0.4}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,1.8001242)(1.6,1.8001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,1.8001242)(3.2,3.0001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,1.8001242)(3.2,0.6001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,1.0001242)(4.8,1.8001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,0.6001242)(4.8,-0.5998758)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,-0.9998758)(6.4,-1.7998757)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.8,1.8001242)(4.0,3.0001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,1.4001242)(4.0,0.6001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,-2.1998758)(8.0,-2.9998758)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,-1.7998757)(6.0,-2.1998758)(3.6,-0.5998758)(3.6,0.20012420654296875)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,-2.5998757)(8.4,-0.9998758)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](10.0,-2.9998758){0.4}
+			\rput(10.0,-2.9998758){$T_{9}$}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.8,-2.9998758)(9.6,-2.9998758)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,-0.19987579)(9.6,0.6001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.8,-0.5998758)(9.6,-0.5998758)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.613936,-2.9784002)(9.613936,-2.9784002)(9.6,-1.7998757)(10.013937,-1.7784002398713563)(10.427874,-1.7569246)(10.427874,-2.5569246)(10.413937,-2.9784002)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(10.4,-2.9998758)(11.2,-2.9998758)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.5988865,0.60320395)(9.5988865,1.403204)(9.998886,1.403204)(9.998886,1.4032039345009713)(9.998886,1.403204)(10.397773,1.4062836)(10.398887,0.60320395)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.6,0.6001242)(4.0,0.6001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(10.4,-0.5998758)(11.2,-0.5998758)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(10.0,-0.19987579)(10.0,-0.19987579)(10.8,0.6001242)(10.8,1.0001242065429687)(10.8,1.4001242)(10.8,1.8001242)(10.0,1.8001242)(9.2,1.8001242)(6.8,1.8001242)(5.6,1.8001242)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(11.6,-3.3998759)(11.6,-4.199876)(9.370143,-4.0424113)(8.4,-3.7998757934570313)(7.4298577,-3.5573401)(6.8,-2.9998758)(6.8,-2.1998758)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(11.6,-0.19987579)(11.6,1.4001242)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(12.0,1.8001242)(12.8,3.0001242)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(13.2,3.4001243)(12.4,3.6001241)(11.0,4.2001243)(10.0,4.200124206542969)(9.0,4.2001243)(7.2,3.6001241)(6.8,3.4001243)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,3.4001243)(8.0,3.8001242)(9.029858,4.0426598)(10.0,3.800124206542969)(10.970142,3.5575886)(11.2,3.0001242)(11.6,2.2001243)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,3.0001242)(5.2,2.2001243)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(12.0,-0.5998758)(13.2,-1.3998758)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(13.2,-1.3998758)(12.8,-1.3998758)(11.6,-1.3998758)(10.4,-1.3998757934570312)(9.2,-1.3998758)(9.2,-1.7998757)(8.4,-2.5998757)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(13.2,-2.1998758)(12.8,-3.3998759)(12.8,-3.7998757)(10.8,-4.199875793457031)(8.8,-4.599876)(6.4,-3.3998759)(6.4,-3.3998759)(6.4,-3.3998759)(5.2,-2.9998758)(4.4,-1.7998757)(3.6,-0.5998758)(3.6,-0.5998758)(3.6,0.2001242)
+			\rput[b](1.2,1.8001242){1}
+			\rput[b](2.8,2.6001241){0}
+			\rput[b](2.8,1.4001242){1}
+			\rput[b](4.4,-0.19987579){0}
+			\rput[b](4.0,1.4001242){1}
+			\rput[b](6.0,-1.3998758){1}
+			\rput[b](4.4,2.6001241){0}
+			\rput[b](4.8,1.0001242){1}
+			\rput[b](7.6,-2.5998757){0}
+			\rput[b](4.8,-1.3998758){1}
+			\rput[br](8.4,-1.7998757){0}
+			\rput[b](9.2,-2.9998758){1}
+			\rput[b](8.8,0.2001242){0}
+			\rput[b](9.2,-0.5998758){1}
+			\rput[b](10.8,-2.9998758){0}
+			\rput[b](10.0,-2.1998758){1}
+			\rput[t](10.0,1.4001242){0}
+			\rput[b](6.8,0.6001242){1}
+			\rput[b](10.8,-0.5998758){0}
+			\rput[b](9.2,1.8001242){1}
+			\rput[b](9.2,-3.7998757){0}
+			\rput[br](11.6,0.6001242){0}
+			\rput[br](12.8,-0.9998758){1}
+			\rput[bl](12.4,2.2001243){1}
+			\rput[t](11.2,-1.3998758){0}
+			\rput[t](7.2,-3.7998757){1}
+			\rput[b](10.0,4.2001243){0}
+			\rput[t](10.0,3.8001242){0}
+			\rput[br](6.0,2.6001241){1}
+			\end{pspicture}
+		}
+	\end{center}
+	对于此DFA可以进一步化简：\\
+	\{\{0\}, \{1,5\}, \{2\}, \{3\}, \{11\}, \{13\}, \{17\}, \{4\}, \{6,15\}, \{7\}, \{8\}, \{10\}, \{9\}, \{12\}, \{14\}, \{16\}\} \\
+	化简后的DFA如下：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-3.41)(7.275,3.41)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.4,-0.21){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.8,0.99){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](1.2,1.79){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,2.19){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.2,2.59){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](4.4,2.19){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](5.2,1.79){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](5.6,0.99){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](5.6,-1.41){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](4.4,-2.61){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.0,-0.21){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,-2.21){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.2,-3.01){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,-2.61){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](1.2,-2.21){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.8,-1.41){0.4}
+			\rput(0.4,-0.21){0}
+			\rput(0.8,0.99){1}
+			\rput(1.2,1.79){2}
+			\rput(2.0,2.19){3}
+			\rput(3.2,2.59){4}
+			\rput(4.4,2.19){5}
+			\rput(5.2,1.79){6}
+			\rput(5.6,0.99){7}
+			\rput(6.0,-0.21){8}
+			\rput(5.6,-1.41){9}
+			\rput(5.2,-2.21){10}
+			\rput(4.4,-2.61){11}
+			\rput(3.2,-3.01){12}
+			\rput(2.0,-2.61){13}
+			\rput(1.2,-2.21){14}
+			\rput(0.8,-1.41){15}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.19)(0.4,0.99)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,1.39)(0.8,1.79)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,2.59)(2.8,2.59)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.99)(0.0,1.39)(0.0,2.59)(0.4,2.59)(0.8,2.59)(0.8,2.59)(2.0,2.59)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,2.19)(1.6,2.19)(0.8,2.59)(0.4,2.19)(0.0,1.79)(0.4,1.39)(0.8,1.39)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,2.59)(4.4,2.59)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.8,2.19)(5.2,2.19)(5.2,2.19)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.4,2.59)(4.4,2.99)(4.0,3.39)(3.2,3.39)(2.4,3.39)(2.0,2.99)(2.0,2.59)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,1.79)(5.6,1.39)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,0.99)(4.8,0.99)(4.8,0.39)(4.8,-0.61)(4.8,-1.61)(4.8,-1.41)(5.2,-1.81)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.3925843,-0.20454553)(7.187218,-0.6006677)(6.7851686,-0.999091)(6.7925844,-1.004545525264208)(6.8,-1.01)(6.439798,-1.4989728)(5.992584,-0.60454553)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,-0.21)(7.2,-0.21)(7.2,-0.61)(7.2,-1.01)(7.2,-1.41)(7.2,-1.81)(6.8,-2.21)(6.4,-2.61)(5.2,-3.01)(4.4,-3.01)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.999022,-1.4091498)(6.8934493,-1.8563634)(6.398044,-2.2082996)(6.399022,-2.2091497941199556)(6.4,-2.21)(6.0462356,-2.703577)(5.599022,-1.8091497)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,-1.41)(2.0,1.79)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,-1.81)(4.4,-1.81)(4.4,-1.81)(4.0,-1.81)(3.6,-1.81)(3.2,-1.81)(3.2,-2.61)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.8,-2.21)(1.2,0.99)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.4,-2.21)(4.4,-2.21)(4.4,1.79)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.8,-3.01)(2.0,-3.01)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,-3.01)(4.0,2.19)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-2.21)(1.6,-2.21)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.2,-1.81)(1.2,-1.41)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,-1.01)(1.2,-1.01)(1.2,-1.21)(1.2,-0.21)(1.2,0.79)(1.2,0.59)(0.8,0.59)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,-1.41)(0.4,-1.41)(0.0,-2.21)(0.4,-2.61)(0.8,-3.01)(1.6,-3.01)(2.0,-3.01)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,1.79)(6.0,1.79)(6.4,1.39)(6.4,0.99)(6.4,0.59)(6.4,0.59)(6.0,0.19)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,0.99)(5.2,0.19)(5.2,-0.61)(5.6,-1.01)
+			\rput[tr](0.4,0.59){1}
+			\rput[tr](0.8,1.79){0}
+			\rput[b](0.4,2.59){1}
+			\rput(2.4,2.59){0}
+			\rput(0.4,2.19){1}
+			\rput(4.0,2.59){1}
+			\rput[t](3.2,3.39){1}
+			\rput[br](5.2,2.19){0}
+			\rput[bl](6.4,0.99){1}
+			\rput[bl](5.6,1.39){0}
+			\rput(5.2,-0.21){0}
+			\rput(4.8,-0.21){1}
+			\rput(7.2,-1.81){0}
+			\rput(6.8,-1.01){1}
+			\rput(6.4,-2.21){0}
+			\rput(2.8,0.99){1}
+			\rput(3.2,-2.21){0}
+			\rput(2.8,-0.61){1}
+			\rput[br](4.4,0.59){1}
+			\rput[tl](2.4,-3.01){0}
+			\rput[r](4.0,1.39){1}
+			\rput[b](1.9591837,-2.1610205){1}
+			\rput[bl](1.1428572,-1.8344898){0}
+			\rput(0.3265306,-2.6508164){0}
+			\rput[r](1.2121212,-0.24636364){1}
+			\end{pspicture}
+		}
+	\end{center}
+
+	\item DFA为： \\
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-0.6129876)(7.2554526,0.6129876)
+			\psline[linecolor=black, linewidth=0.04, doubleline=true, doublesep=0.1, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(-0.107638896,-0.21298759)(1.4923611,-0.21298759)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](1.8923612,-0.21298759){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](3.492361,-0.21298759){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](5.092361,-0.21298759){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](6.692361,-0.21298759){0.4}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.292361,-0.21298759)(3.0923612,-0.21298759)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.8923612,-0.21298759)(4.692361,-0.21298759)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.492361,-0.21298759)(6.2923613,-0.21298759)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.4923611,-0.21298759)(1.0451475,0.68143964)(1.8923612,0.5870124)(1.8923612,0.5870124197006226)(1.8923612,0.5870124)(2.7395747,0.68143964)(2.292361,-0.21298759)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.0923612,-0.21298759)(2.6451476,0.68143964)(3.492361,0.5870124)(3.492361,0.5870124197006226)(3.492361,0.5870124)(4.339575,0.68143964)(3.8923612,-0.21298759)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.692361,-0.21298759)(4.2451477,0.68143964)(5.092361,0.5870124)(5.092361,0.5870124197006226)(5.092361,0.5870124)(5.9395747,0.68143964)(5.492361,-0.21298759)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.2923613,-0.21298759)(5.8451476,0.68143964)(6.692361,0.5870124)(6.692361,0.5870124197006226)(6.692361,0.5870124)(7.5395746,0.68143964)(7.092361,-0.21298759)
+			\rput(1.8923612,-0.21298759){0}
+			\rput(3.492361,-0.21298759){1}
+			\rput(5.092361,-0.21298759){2}
+			\rput(6.692361,-0.21298759){3}
+			\rput[t](1.8923612,0.5870124){0}
+			\rput[t](3.492361,0.5870124){0}
+			\rput[t](5.092361,0.5870124){0}
+			\rput[t](6.692361,0.5870124){0}
+			\rput[t](2.692361,-0.21298759){1}
+			\rput[t](4.2923613,-0.21298759){1}
+			\rput[t](5.892361,-0.21298759){1}
+			\end{pspicture}
+		}
+	\end{center}
+		
+	\item 首先画出对应的NFA：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-5.2)(9.480721,5.2)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.4,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](2.0,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.6,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,-1.6){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,-4.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](6.8,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](8.4,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.0,-2.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](7.6,-2.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.8,-0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,0.4){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](8.4,0.4){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.0,2.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](7.6,2.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](6.8,3.6){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](6.0,4.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](7.6,4.8){0.4}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,-3.2)(1.6,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,-3.2)(3.2,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,-3.2)(4.8,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,-3.2)(6.4,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,-3.2)(8.0,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,-3.2)(1.6,-1.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,-1.6)(2.4,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,-3.2)(1.6,-4.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,-4.8)(2.4,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,-3.2)(6.0,-2.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,-3.2)(7.6,-2.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.0,-1.6)(6.4,-0.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.6,-1.6)(7.2,-0.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,-0.8)(5.2,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,0.4)(6.8,-0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,-0.8)(8.4,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.0,0.4)(6.8,-0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,-0.4)(6.0,1.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,-0.4)(7.6,1.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.0,2.4)(6.4,3.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.6,2.4)(7.2,3.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,3.6)(6.0,4.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,4.8)(6.8,4.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,3.6)(7.6,4.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,4.8)(6.8,4.0)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,3.6)(8.4,2.4)(8.957464,1.3701425)(9.2,0.4)(9.442535,-0.5701425)(9.6,-2.4)(9.2,-3.2)(8.8,-4.0)(7.2,-4.0)(6.8,-3.6)
+			\rput(0.4,-3.2){X}
+			\rput(2.0,-3.2){0}
+			\rput(2.0,-1.6){1}
+			\rput(2.0,-4.8){2}
+			\rput(3.6,-3.2){3}
+			\rput(5.2,-3.2){4}
+			\rput(6.8,-3.2){5}
+			\rput(6.0,-2.0){6}
+			\rput(7.6,-2.0){7}
+			\rput(6.8,-0.8){8}
+			\rput(5.2,0.4){9}
+			\rput(8.4,0.4){10}
+			\rput(6.0,2.0){11}
+			\rput(7.6,2.0){12}
+			\rput(6.8,3.6){13}
+			\rput(6.0,4.8){14}
+			\rput(7.6,4.8){15}
+			\rput(8.4,-3.2){Y}
+			\rput[b](1.2,-3.2){$\varepsilon$}
+			\rput[b](2.8,-3.2){$\varepsilon$}
+			\rput[b](4.4,-3.2){$\varepsilon$}
+			\rput[b](6.0,-3.2){$\varepsilon$}
+			\rput[b](7.6,-3.2){$\varepsilon$}
+			\rput[b](6.0,-2.8){0}
+			\rput[b](6.0,-1.2){1}
+			\rput[b](7.6,-2.8){1}
+			\rput[b](7.6,-1.2){0}
+			\rput[b](5.6,-0.4){0}
+			\rput[b](6.0,0.0){0}
+			\rput[b](7.6,0.0){1}
+			\rput[b](8.0,-0.4){1}
+			\rput[b](6.4,0.8){0}
+			\rput[b](6.0,2.8){1}
+			\rput[b](7.2,0.8){1}
+			\rput[b](7.6,2.8){0}
+			\rput[b](6.0,4.0){0}
+			\rput[b](6.4,4.4){0}
+			\rput[b](7.2,4.4){1}
+			\rput[b](7.6,4.0){1}
+			\rput[b](9.2,0.4){$\varepsilon$}
+			\rput[b](1.6,-2.4){0}
+			\rput[b](2.4,-2.4){0}
+			\rput[bl](1.6,-4.0){1}
+			\rput[bl](2.4,-4.0){1}
+			\end{pspicture}
+		}
+	\end{center}
+	对此NFA进行简化：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-5.2)(6.2807217,5.2)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.4,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](2.0,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](1.6,-1.6){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,-4.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](3.6,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](5.2,-3.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.8,-2.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](4.4,-2.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.6,-0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,0.4){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,0.4){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.8,2.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](4.4,2.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](3.6,3.6){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.8,4.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](4.4,4.8){0.4}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,-3.2)(1.6,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,-3.2)(3.2,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,-3.2)(4.8,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,-3.2)(1.2,-1.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-1.6)(2.4,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,-3.2)(1.6,-4.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,-4.8)(2.4,-3.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.2,-3.2)(2.8,-2.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,-3.2)(4.4,-2.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.8,-1.6)(3.2,-0.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.4,-1.6)(4.0,-0.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.2,-0.8)(2.0,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,0.4)(3.6,-0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,-0.8)(5.2,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.8,0.4)(3.6,-0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,-0.4)(2.8,1.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,-0.4)(4.4,1.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.8,2.4)(3.2,3.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.4,2.4)(4.0,3.6)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.2,3.6)(2.8,4.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.2,4.8)(3.6,4.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,3.6)(4.4,4.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,4.8)(3.6,4.0)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.0,3.6)(5.2,2.4)(5.7574644,1.3701425)(6.0,0.4)(6.2425356,-0.5701425)(6.4,-2.4)(6.0,-3.2)(5.6,-4.0)(4.0,-4.0)(3.6,-3.6)
+			\rput(0.4,-3.2){X}
+			\rput(2.0,-3.2){0}
+			\rput(1.6,-1.6){1}
+			\rput(2.0,-4.8){2}
+			\rput(5.2,-3.2){Y}
+			\rput[b](1.2,-3.2){$\varepsilon$}
+			\rput[b](2.8,-3.2){$\varepsilon$}
+			\rput[b](4.4,-3.2){$\varepsilon$}
+			\rput[b](2.8,-2.8){0}
+			\rput[b](2.8,-1.2){1}
+			\rput[b](4.4,-2.8){1}
+			\rput[b](4.4,-1.2){0}
+			\rput[b](2.4,-0.4){0}
+			\rput[b](2.8,0.0){0}
+			\rput[b](4.4,0.0){1}
+			\rput[b](4.8,-0.4){1}
+			\rput[b](3.2,0.8){0}
+			\rput[b](2.8,2.8){1}
+			\rput[b](4.0,0.8){1}
+			\rput[b](4.4,2.8){0}
+			\rput[b](2.8,4.0){0}
+			\rput[b](3.2,4.4){0}
+			\rput[b](4.0,4.4){1}
+			\rput[b](4.4,4.0){1}
+			\rput[b](6.0,0.4){$\varepsilon$}
+			\rput[b](1.6,-2.4){0}
+			\rput[b](2.0,-2.4){0}
+			\rput[bl](1.6,-4.0){1}
+			\rput[bl](2.4,-4.0){1}
+			\rput(3.6,-3.2){3}
+			\rput(2.8,-2.0){4}
+			\rput(4.4,-2.0){5}
+			\rput(3.6,-0.8){6}
+			\rput(2.0,0.4){7}
+			\rput(5.2,0.4){8}
+			\rput(2.8,2.0){9}
+			\rput(4.4,2.0){10}
+			\rput(3.6,3.6){11}
+			\rput(2.8,4.8){12}
+			\rput(4.4,4.8){13}
+			\end{pspicture}
+		}
+	\end{center}
+	将该NFA确定化：
+	\begin{table}[H]
+		\caption{状态转换矩阵}
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$I$ & $I_{0}$ & $I_{1}$ \\\hline
+			\textcolor{green}{0} \{X,0,3,Y\} & \textcolor{green}{1} \{1,4\} &
+			\textcolor{green}{2} \{2,5\} \\\hline
+			
+			\textcolor{green}{1} \{1,4\} & \textcolor{green}{3} \{0,3,Y\} &
+			\textcolor{green}{4} \{6\} \\\hline
+			
+			\textcolor{green}{2} \{2,5\} & \textcolor{green}{4} \{6\} & \textcolor{green}{3}
+			\{0,3,Y\} \\\hline
+			
+			\textcolor{green}{3} \{0,3,Y\} & \textcolor{green}{1} \{1,4\} &
+			\textcolor{green}{2} \{2,5\} \\\hline
+			
+			\textcolor{green}{4} \{6\} & \textcolor{green}{5} \{7,9\} &
+			\textcolor{green}{6} \{8,10\} \\\hline
+			
+			\textcolor{green}{5} \{7,9\} & \textcolor{green}{4} \{6\} &
+			\textcolor{green}{7} \{11,3,Y\} \\\hline
+			
+			\textcolor{green}{6} \{8,10\} & \textcolor{green}{7} \{11,3,Y\} &
+			\textcolor{green}{4} \{6\} \\\hline
+			
+			\textcolor{green}{7} \{11,3,Y\} & \textcolor{green}{8} \{12,4\} &
+			\textcolor{green}{9} \{13,5\} \\\hline
+			
+			\textcolor{green}{8} \{12,4\} & \textcolor{green}{7} \{11,3,Y\} &
+			\textcolor{green}{4} \{6\} \\\hline
+			
+			\textcolor{green}{9} \{13,5\} & \textcolor{green}{4} \{6\} &
+			\textcolor{green}{7} \{11,3,Y\} \\\hline
+		\end{tabular}
+	\end{table}
+	得到DFA如下：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-3.6098952)(10.8951435,3.6098952)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](0.4,0.5898952){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](1.6,2.989895){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](1.6,-1.8101048){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.8,0.5898952){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,0.5898952){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,-1.8101048){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](6.8,-0.6101048){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](8.4,0.5898952){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](8.4,-1.8101048){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](8.4,2.989895){0.4}
+			\rput(0.4,0.5898952){0}
+			\rput(1.6,2.989895){1}
+			\rput(1.6,-1.8101048){2}
+			\rput(2.8,0.5898952){4}
+			\rput(5.2,0.5898952){5}
+			\rput(5.2,-1.8101048){6}
+			\rput(6.8,-0.6101048){7}
+			\rput(8.4,0.5898952){8}
+			\rput(8.4,-1.8101048){9}
+			\rput(8.4,2.989895){3}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.9898952)(1.2,2.989895)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.18989521)(1.2,-1.8101048)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,2.5898952)(8.4,2.5898952)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,3.3898952)(1.6,3.3898952)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,2.5898952)(2.8,0.9898952)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-1.8101048)(2.8,0.18989521)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.8,0.9898952)(5.2,0.9898952)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,0.18989521)(3.2,0.5898952)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.2,0.5898952)(5.2,-1.4101048)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.8,-1.8101048)(2.8,0.18989521)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,0.5898952)(6.8,-0.2101048)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,-1.8101048)(6.8,-1.0101048)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,-0.2101048)(8.0,0.5898952)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,0.18989521)(7.2,-0.6101048)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,-0.6101048)(8.4,-1.4101048)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.0,-1.8101048)(6.8,-1.0101048)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,0.9898952)(8.4,1.3898952)(8.0,2.1898952)(5.6,2.1898952102661133)(3.2,2.1898952)(2.8,1.7898952)(2.8,0.9898952)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,-2.2101047)(8.4,-3.010105)(5.6,-2.6101048)(4.4,-2.2101047897338866)(3.2,-1.8101048)(2.8,-1.0101048)(2.8,0.18989521)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-1.8101048)(2.8,-2.6101048)(6.0,-3.4101048)(8.8,-3.010104789733887)(11.6,-2.6101048)(10.0,2.1898952)(8.8,2.989895)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,3.3898952)(10.8,2.989895)(11.6,-1.8101048)(10.0,-3.010104789733887)(8.4,-4.210105)(1.7168412,-3.2032554)(1.6,-2.2101047)
+			\rput[br](0.8,1.7898952){0}
+			\rput[br](0.8,-0.6101048){1}
+			\rput[br](5.2,2.5898952){0}
+			\rput[br](5.2,3.3898952){0}
+			\rput[br](2.0,1.7898952){1}
+			\rput[br](2.4,-1.0101048){0}
+			\rput[br](10.0,-2.2101047){1}
+			\rput[br](10.4,-2.6101048){1}
+			\rput[br](4.0,0.9898952){0}
+			\rput[br](4.0,0.5898952){0}
+			\rput[br](4.4,-0.6101048){1}
+			\rput[br](4.0,-1.0101048){1}
+			\rput[br](6.0,-1.4101048){0}
+			\rput[br](6.0,0.18989521){1}
+			\rput[br](7.2,0.18989521){0}
+			\rput[br](8.0,-0.2101048){0}
+			\rput[br](7.6,-1.0101048){1}
+			\rput[br](7.6,-1.4101048){1}
+			\rput[br](6.0,-2.6101048){0}
+			\rput[tl](5.6,2.1898952){1}
+			\end{pspicture}
+		}
+	\end{center}
+	对该DFA进一步化简.\{\{0,3\}, \{1\}, \{2\}, \{4\}, \{5,9\}, \{6,8\}, \{7\}\}得：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-1.6)(7.2,1.6)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](0.4,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,1.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0,-1.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.6,0.0){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,1.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](5.2,-1.2){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](6.8,0.0){0.4}
+			\rput(0.4,0.0){0}
+			\rput(2.0,1.2){1}
+			\rput(2.0,-1.2){2}
+			\rput(3.6,0.0){3}
+			\rput(5.2,1.2){4}
+			\rput(5.2,-1.2){5}
+			\rput(6.8,0.0){6}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,0.0)(2.0,0.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,1.2)(0.4,0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,0.0)(2.0,-0.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,-1.2)(0.4,-0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,1.2)(3.6,0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,-1.2)(3.6,-0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,0.4)(4.8,1.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,0.8)(4.0,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,-0.4)(4.8,-1.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,-0.8)(4.0,0.0)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,1.2)(6.8,0.4)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,0.0)(5.2,0.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.4,0.0)(5.2,-0.8)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.6,-1.2)(6.8,-0.4)
+			\rput(0.8,0.8){0}
+			\rput(1.6,0.4){0}
+			\rput(1.2,-0.4){1}
+			\rput(1.2,-0.8){1}
+			\rput(2.8,0.8){1}
+			\rput(2.8,-0.8){0}
+			\rput(4.4,0.8){0}
+			\rput(4.4,0.4){0}
+			\rput(4.8,-0.4){1}
+			\rput(4.4,-0.8){1}
+			\rput(6.0,0.8){1}
+			\rput(6.0,0.4){1}
+			\rput(5.6,-0.4){0}
+			\rput(6.0,-0.8){0}
+			\end{pspicture}
+		}
+	\end{center}
+\end{itemize}

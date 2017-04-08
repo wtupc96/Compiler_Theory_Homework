@@ -1,4 +1,6 @@
 \documentclass[]{ctexart}
+\usepackage{float}
+\usepackage{subfiles}
 \usepackage[usenames,dvipsnames]{pstricks}
 \usepackage{epsfig}
 \usepackage{pst-grad} % For gradients
@@ -24,7 +26,8 @@
 		$0^{*}10^{*}10^{*}10^{*}$ \\
 		$(00|11)^{*}((01|10)(00|11)^{*}(01|10)(00|11)^{*})^{*}$
 	\end{center}
-
+	\subfile{3_7.tex}
+	
 	\item[3.9] 对下面情况给出DFA及正规表达式：
 	\begin{enumerate}
 		\item[(1)] \{0,1\}上的含有子串010的所有串；
@@ -33,60 +36,59 @@
 
 	\item[3.12] 将图3.18的(a)和(b)分别确定化和最少化。
 	\begin{center}
-	\psscalebox{0.8 0.8} % Change this value to rescale the drawing.
+	\psscalebox{0.7 0.7} % Change this value to rescale the drawing.
 	{
-		\begin{pspicture}(0,-1.88)(11.508712,1.88)
-		
-		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](1.6,-0.12){0.4}
-		\psline[linecolor=black, linewidth=0.04, doubleline=true, doublesep=0.1, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(0.0,-0.12)(1.2,-0.12)
-		\rput(1.6,-0.12){0}
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(1.2,-0.12)(0.7527864,0.7744272)(0.6,0.68)(1.6,0.6800000000000022)(2.6,0.68)(2.4472136,0.7744272)(2.0,-0.12)
-		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](4.0,-0.12){0.4}
-		\rput(4.0,-0.12){1}
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(2.0,-0.12)(2.8,0.68)(2.2194192,0.48388386)(3.2,0.6800000000000022)(4.1805806,0.87611616)(4.0,0.68)(4.0,0.28)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(4.0,-0.52)(3.6,-0.92)(2.4,-0.92)(2.8,-0.9199999999999992)(3.2,-0.92)(2.0,-0.92)(1.6,-0.52)
-		\rput[b](2.8,-0.92){a}
-		\rput[b](3.2,0.68){a,b}
-		\rput[b](1.6,0.68){a}
-		\rput[b](2.24,-1.88){(a)}
-		\psline[linecolor=black, linewidth=0.04, doubleline=true, doublesep=0.1, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(5.12,1.32)(6.08,1.32)
-		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](6.4,1.32){0.32}
-		\rput(6.4,1.32){0}
-		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](8.32,1.32){0.32}
-		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](10.24,1.32){0.32}
-		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](6.4,-0.6){0.32}
-		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](8.32,-0.6){0.32}
-		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](10.24,-0.6){0.32}
-		\rput(6.4,-0.6){1}
-		\rput(8.32,1.32){2}
-		\rput(10.24,1.32){3}
-		\rput(8.32,-0.6){4}
-		\rput(10.24,-0.6){5}
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(6.4,1.0)(6.4,0.68)(6.4,1.16)(6.4,0.3600000000000054)(6.4,-0.44)(6.4,0.04)(6.4,-0.28)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(8.32,1.0)(8.32,0.68)(8.245686,0.6056854)(7.68,0.0399999999999963)(7.1143146,-0.5256854)(7.36,-0.28)(6.72,-0.6)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(8.32,-0.28)(8.0,0.36)(8.0,0.68)(7.68,1.0000000000000044)(7.36,1.32)(7.04,1.32)(6.72,1.32)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(8.64,1.32)(8.96,1.64)(8.64,1.64)(9.28,1.6400000000000048)(9.92,1.64)(9.28,1.64)(9.92,1.32)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(10.24,1.0)(10.88,1.0)(10.88,0.68)(11.2,1.0000000000000044)(11.52,1.32)(11.36,1.32)(10.56,1.32)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(9.92,1.32)(9.6,1.0)(9.92,1.0)(9.28,1.0000000000000044)(8.64,1.0)(8.96,1.0)(8.64,1.32)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(8.64,-0.6)(8.64,-0.28)(8.96,-0.28)(9.28,-0.27999999999999886)(9.6,-0.28)(9.92,-0.28)(9.92,-0.6)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(9.92,-0.6)(9.28,-0.92)(9.92,-0.92)(9.28,-0.9199999999999992)(8.64,-0.92)(9.28,-0.92)(8.64,-0.6)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(10.235725,-0.9167074)(11.195725,-1.2367073)(11.195725,-1.2367073)(11.195725,-1.2367073873354146)(11.195725,-1.2367073)(12.16,-1.24)(10.555725,-0.5967074)
-		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(6.3882265,-0.84193766)(5.736453,-0.76387525)(5.9226146,-1.2090876)(5.4150376,-0.8317737847667936)(4.9074607,-0.45446)(5.7860184,-0.57259554)(6.1010976,-0.6284967)
-		\psline[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(6.72,1.32)(8.0,1.32)(8.0,1.32)
-		\rput[b](7.68,1.32){b}
-		\rput[b](9.28,1.64){b}
-		\rput[b](9.28,-0.28){b}
-		\rput[b](11.2,1.32){a}
-		\rput[b](11.2,-1.24){a}
-		\rput[b](5.76,-0.6){a}
-		\rput[tr](6.4,0.36){a}
-		\rput[tl](7.36,1.0){a}
-		\rput[bl](7.36,-0.92){b}
-		\psline[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(6.72,-0.6)(8.0,-0.6)
-		\rput[b](7.36,-0.28){a}
-		\rput[b](9.28,-0.92){b}
-		\rput[b](9.28,1.0){b}
-		\rput[b](8.32,-1.88){(b)}
+		\begin{pspicture}(0,-2.6075)(14.38433,2.6075)
+		\psline[linecolor=black, linewidth=0.04, doubleline=true, doublesep=0.12, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(-0.11763889,0.3675)(1.4823611,0.3675)
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](1.882361,0.3675){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](4.282361,0.3675){0.4}
+		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(1.4823611,0.3675)(1.4823611,1.1675)(1.4823611,1.1675)(1.882361,1.1675)(2.282361,1.1675)(2.282361,1.1675)(2.282361,0.3675)
+		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(2.282361,0.3675)(2.282361,1.1675)(2.6823611,1.1675)(3.0823612,1.1675)(3.482361,1.1675)(3.8823612,1.1675)(3.8823612,0.3675)
+		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(3.8823612,0.3675)(3.8823612,-0.0325)(3.8823612,-0.4325)(3.0823612,-0.4325)(2.282361,-0.4325)(2.282361,-0.0325)(2.282361,0.3675)
+		\rput(1.882361,0.3675){0}
+		\rput(4.282361,0.3675){1}
+		\rput[b](1.882361,1.1675){a}
+		\rput[b](3.0823612,1.1675){a,b}
+		\rput[b](3.0823612,-0.4325){a}
+		\psline[linecolor=black, linewidth=0.04, doubleline=true, doublesep=0.1, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(6.282361,1.9675)(7.882361,1.9675)
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](8.282361,1.9675){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](10.682361,1.9675){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](13.082361,1.9675){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](10.682361,-0.4325){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](13.082361,-0.4325){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](8.282361,-0.4325){0.4}
+		\rput(8.282361,1.9675){0}
+		\rput(8.282361,-0.4325){1}
+		\rput(10.682361,1.9675){2}
+		\rput(13.082361,1.9675){3}
+		\rput(10.682361,-0.4325){4}
+		\rput(13.082361,-0.4325){5}
+		\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.682361,1.9675)(10.282361,1.9675)
+		\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.282361,1.5675)(8.282361,-0.0325)
+		\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.682361,-0.4325)(10.282361,-0.4325)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(10.682361,1.5675)(10.682361,1.1675)(9.882361,0.3675)(9.882361,0.3675)(9.882361,0.3675)(9.482361,-0.0325)(8.682361,-0.4325)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(10.682361,-0.0325)(10.682361,0.3675)(9.882361,1.1675)(9.882361,1.1675)(9.882361,1.1675)(9.882361,1.1675)(8.682361,1.9675)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.282361,-0.8325)(7.8351474,-1.7269272)(7.4823613,-1.2325)(7.4823613,-1.2325)(7.4823613,-1.2325)(6.987934,-0.8797136)(7.882361,-0.4325)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(11.082361,1.9675)(11.482361,2.3675)(11.882361,2.3675)(11.882361,2.3675)(11.882361,2.3675)(12.282361,2.3675)(12.682361,1.9675)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(12.682361,1.9675)(12.282361,1.5675)(11.882361,1.5675)(11.882361,1.5675)(11.882361,1.5675)(11.482361,1.5675)(11.082361,1.9675)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(11.082361,-0.4325)(11.482361,-0.0325)(11.882361,-0.0325)(11.882361,-0.0325)(11.882361,-0.0325)(12.282361,-0.0325)(12.682361,-0.4325)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(12.682361,-0.4325)(12.282361,-0.8325)(11.882361,-0.8325)(11.882361,-0.8325)(11.882361,-0.8325)(11.482361,-0.8325)(11.082361,-0.4325)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(13.066143,-0.8262915)(13.049925,-0.8200831)(13.882361,-1.6325)(14.266143,-1.2262915264809635)(14.649924,-0.8200831)(13.506688,-0.43870848)(13.482361,-0.4325)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(13.082989,1.5280781)(13.6205635,0.6848619)(13.882361,1.1675)(13.920163,1.2132145417561795)(13.957965,1.2589291)(14.375331,1.6153818)(13.439342,1.96741)
+		\rput[b](9.482361,1.9675){b}
+		\rput[b](11.882361,2.3675){b}
+		\rput[b](11.882361,1.5675){b}
+		\rput[b](9.882361,1.1675){a}
+		\rput[b](9.482361,-0.0325){a}
+		\rput[b](11.882361,-0.0325){b}
+		\rput[b](11.882361,-0.8325){b}
+		\rput[b](13.882361,-1.2325){a}
+		\rput[b](13.882361,1.1675){a}
+		\rput[b](7.4823613,-1.2325){a}
+		\rput[br](8.282361,0.7675){a}
+		\rput[t](9.482361,-0.4325){b}
+		\rput(11.082361,-2.4325){(b)}
+		\rput(2.6823611,-2.4325){(a)}
 		\end{pspicture}
 	}
 	

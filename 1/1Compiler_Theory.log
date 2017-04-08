@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.2.28)  6 APR 2017 23:07
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.2.28)  8 APR 2017 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1150,6 +1150,23 @@ r Vista or later version (CTEX)
 (e:/TextLive/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2016/05/16 v2.4.2 Configuration file (CTEX)
 )
+(e:/TextLive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count137
+\float@exts=\toks19
+\float@box=\box54
+\@float@everytoks=\toks20
+\@floatcapt=\box55
+)
+(e:/TextLive/texmf-dist/tex/latex/subfiles/subfiles.sty
+Package: subfiles 2012/05/23 Federico Garcia
+
+(e:/TextLive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks21
+\verbatim@line=\toks22
+\verbatim@in@stream=\read2
+))
 (e:/TextLive/texmf-dist/tex/latex/pstricks/pstricks.sty
 Package: pstricks 2015/11/14 v0.62 LaTeX wrapper for `PSTricks' (RN,HV)
 
@@ -1182,36 +1199,36 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (e:/TextLive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (e:/TextLive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks19
-\XKV@tempa@toks=\toks20
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
 )
-\XKV@depth=\count137
+\XKV@depth=\count138
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )))
 (e:/TextLive/texmf-dist/tex/generic/pstricks/pst-fp.tex
 `pst-fp' v0.05, 2010/01/17 (hv)
-\pstFP@xs=\count138
-\pstFP@xia=\count139
-\pstFP@xib=\count140
-\pstFP@xfa=\count141
-\pstFP@xfb=\count142
-\pstFP@rega=\count143
-\pstFP@regb=\count144
-\pstFP@regs=\count145
-\pstFP@times=\count146
+\pstFP@xs=\count139
+\pstFP@xia=\count140
+\pstFP@xib=\count141
+\pstFP@xfa=\count142
+\pstFP@xfb=\count143
+\pstFP@rega=\count144
+\pstFP@regb=\count145
+\pstFP@regs=\count146
+\pstFP@times=\count147
 )
 (e:/TextLive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks21
+\pgfutil@everybye=\toks25
 \pgfutil@tempdima=\dimen175
 \pgfutil@tempdimb=\dimen176
 
 (e:/TextLive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex))
 (e:/TextLive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks22
-\pgfkeys@temptoks=\toks23
+\pgfkeys@pathtoks=\toks26
+\pgfkeys@temptoks=\toks27
 
 (e:/TextLive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks24
+\pgfkeys@tmptoks=\toks28
 ))
 (e:/TextLive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 (e:/TextLive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
@@ -1225,20 +1242,20 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 \pgf@ya=\dimen182
 \pgf@yb=\dimen183
 \pgf@yc=\dimen184
-\c@pgf@counta=\count147
-\c@pgf@countb=\count148
-\c@pgf@countc=\count149
-\c@pgf@countd=\count150
-\pgfutil@tempcnta=\count151
-\pgfutil@tempcntb=\count152
+\c@pgf@counta=\count148
+\c@pgf@countb=\count149
+\c@pgf@countc=\count150
+\c@pgf@countd=\count151
+\pgfutil@tempcnta=\count152
+\pgfutil@tempcntb=\count153
 )
 (e:/TextLive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen185
-\pgfmath@count=\count153
-\pgfmath@box=\box54
-\pgfmath@toks=\toks25
-\pgfmath@stack@operand=\toks26
-\pgfmath@stack@operation=\toks27
+\pgfmath@count=\count154
+\pgfmath@box=\box56
+\pgfmath@toks=\toks29
+\pgfmath@stack@operand=\toks30
+\pgfmath@stack@operation=\toks31
 )
 (e:/TextLive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (e:/TextLive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -1252,14 +1269,14 @@ ex) (e:/TextLive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
 (e:/TextLive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetic
 s.code.tex)))
 (e:/TextLive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count154
+\c@pgfmathroundto@lastzeros=\count155
 ))
 \pgffor@iter=\dimen186
 \pgffor@skip=\dimen187
-\pgffor@stack=\toks28
-\pgffor@toks=\toks29
+\pgffor@stack=\toks32
+\pgffor@toks=\toks33
 )
-\psLoopIndex=\count155
+\psLoopIndex=\count156
 
 `PSTricks' v2.66  <2016/05/18> (tvz)
 \pst@dima=\dimen188
@@ -1272,36 +1289,36 @@ s.code.tex)))
 \pst@dimn=\dimen195
 \pst@dimo=\dimen196
 \pst@dimp=\dimen197
-\pst@hbox=\box55
-\pst@ibox=\box56
-\pst@boxg=\box57
-\pst@cnta=\count156
-\pst@cntb=\count157
-\pst@cntc=\count158
-\pst@cntd=\count159
-\pst@cntg=\count160
-\pst@cnth=\count161
-\pst@cntm=\count162
-\pst@cntn=\count163
-\pst@cnto=\count164
-\pst@cntp=\count165
-\@zero=\count166
-\pst@toks=\toks30
+\pst@hbox=\box57
+\pst@ibox=\box58
+\pst@boxg=\box59
+\pst@cnta=\count157
+\pst@cntb=\count158
+\pst@cntc=\count159
+\pst@cntd=\count160
+\pst@cntg=\count161
+\pst@cnth=\count162
+\pst@cntm=\count163
+\pst@cntn=\count164
+\pst@cnto=\count165
+\pst@cntp=\count166
+\@zero=\count167
+\pst@toks=\toks34
 (e:/TextLive/texmf-dist/tex/xelatex/xetex-pstricks/pstricks.con
 (e:/TextLive/texmf-dist/tex/generic/pstricks/config/xdvipdfmx.cfg))
 \psunit=\dimen198
 \psxunit=\dimen199
 \psyunit=\dimen256
-\pst@C@@rType=\count167
+\pst@C@@rType=\count168
 \pslinewidth=\dimen257
 \psk@startLW=\dimen258
 \psk@endLW=\dimen259
-\pst@customdefs=\toks31
+\pst@customdefs=\toks35
 \pslinearc=\dimen260
 \pst@symbolStep=\dimen261
 \pst@symbolWidth=\dimen262
 \pst@symbolLinewidth=\dimen263
-\everypsbox=\toks32
+\everypsbox=\toks36
 \psframesep=\dimen264
 \pslabelsep=\dimen265
 \sh@wgridXunit=\dimen266
@@ -1340,9 +1357,9 @@ Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
 
 (e:/TextLive/texmf-dist/tex/generic/multido/multido.tex
  v1.42, 2010/05/14 <tvz>
-\multido@count=\count168
-\multidocount=\count169
-\multido@stuff=\toks33
+\multido@count=\count169
+\multidocount=\count170
+\multido@stuff=\toks37
 )
 File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
 )
@@ -1353,14 +1370,14 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 `PST-tools' v0.05, 2014/05/12 (hv))
 (e:/TextLive/texmf-dist/tex/generic/pstricks-add/pstricks-add.tex
 (e:/TextLive/texmf-dist/tex/generic/pst-node/pst-node.tex  v1.36, 2016/04/24
-\psrow=\count170
-\pscol=\count171
-\psmatrixcnt=\count172
+\psrow=\count171
+\pscol=\count172
+\psmatrixcnt=\count173
 \psrowsep=\skip60
 \pscolsep=\skip61
-\pst@args=\count173
-\num@pts=\count174
-\pst@argcnt=\count175
+\pst@args=\count174
+\num@pts=\count175
+\pst@argcnt=\count176
 )
 (e:/TextLive/texmf-dist/tex/generic/pst-3d/pst-3d.tex
 `PST-3d' v1.11, 2010/02/14 (tvz))
@@ -1369,20 +1386,20 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 \psparallelogramsep=\dimen271
 \pshooklength=\dimen272
 \pshookwidth=\dimen273
-\pst@cntC=\count176
+\pst@cntC=\count177
 \chart@ColorIndex=\dimen274
 \chart@ColorStep=\dimen275
 \pst@chartHeight=\dimen276
 \pst@chartStackDepth=\dimen277
 \pst@chartStackWidth=\dimen278
-\chart@Toggle=\count177
-\psVectorCtr=\count178
+\chart@Toggle=\count178
+\psVectorCtr=\count179
 )
  v1.75, 2016/05/18 (tvz,hv)
 \pstRadUnit=\dimen279
 \pstRadUnitInv=\dimen280
-\pst@linecnt=\count179
-\RCD@file=\read2
+\pst@linecnt=\count180
+\RCD@file=\read3
 \psxlabelsep=\dimen281
 \psylabelsep=\dimen282
 \psk@subticksize=\dimen283
@@ -1392,7 +1409,7 @@ Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
 \pst@yticksizeA=\dimen287
 \pst@yticksizeB=\dimen288
 \pst@yticksizeC=\dimen289
-\@digitcounter=\count180
+\@digitcounter=\count181
 \psk@llx=\dimen290
 \psk@lly=\dimen291
 \psk@urx=\dimen292
@@ -1447,36 +1464,36 @@ Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
 )
 (e:/TextLive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count181
+\etb@tempcnta=\count182
 )
 (./1Compiler_Theory.aux)
 \openout1 = `1Compiler_Theory.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 15.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 17.
  (e:/TextLive/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    ... okay on input line 17.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 15.
+LaTeX Info: Redefining \selectfont on input line 17.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -1484,79 +1501,114 @@ LaTeX Info: Redefining \selectfont on input line 15.
 .................................................
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 15.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 15.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 15.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 15.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 15.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 15.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 15.
-LaTeX Font Info:    Redeclaring math accent \check on input line 15.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 15.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 15.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 15.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 15.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 15.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 17.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 17.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 17.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 17.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 17.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 17.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 17.
+LaTeX Font Info:    Redeclaring math accent \check on input line 17.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 17.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 17.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 17.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 17.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 17.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 15.
+(Font)              `operators' in the math version `normal' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> EU1/lmr/m/n on input line 15.
+(Font)                  OT1/cmr/m/n --> EU1/lmr/m/n on input line 17.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 15.
+(Font)              `operators' in the math version `bold' on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> EU1/lmr/m/n on input line 15.
+(Font)                  OT1/cmr/bx/n --> EU1/lmr/m/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 15.
+(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> EU1/lmr/m/it on input line 15.
+(Font)                  OT1/cmr/m/it --> EU1/lmr/m/it on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> EU1/lmr/bx/n on input line 15.
+(Font)                  OT1/cmr/bx/n --> EU1/lmr/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 15.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 15.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 17.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 15.
+(Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> EU1/lmr/bx/it on input line 15.
+(Font)                  OT1/cmr/bx/it --> EU1/lmr/bx/it on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 15.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 17.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 15.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12.045> on input line 17.
+(Font)              <12.045> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 17.
+(Font)              <8> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 17.
+(Font)              <6> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.53937> on input line 22.
+(Font)              <10.53937> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 22.
+(Font)              <7> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 22.
- [1
+(Font)              <5> on input line 24.
+ (./3_7.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
-] (./1Compiler_Theory.aux) ) 
+ []
+
+[1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
+Overfull \hbox (17.18259pt too wide) in paragraph at lines 308--309
+ [] 
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+[4] [5] [6]
+Overfull \hbox (19.01591pt too wide) in paragraph at lines 723--724
+ [] 
+ []
+
+) [7] [8] (./1Compiler_Theory.aux) ) 
 Here is how much of TeX's memory you used:
- 29631 strings out of 493591
- 590799 string characters out of 6148418
- 653022 words of memory out of 5000000
- 32711 multiletter control sequences out of 15000+600000
- 7550 words of font info for 46 fonts, out of 8000000 for 9000
+ 29747 strings out of 493591
+ 593148 string characters out of 6148418
+ 761087 words of memory out of 5000000
+ 32810 multiletter control sequences out of 15000+600000
+ 7574 words of font info for 49 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
- 65i,6n,78p,10466b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,11n,78p,10442b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 1Compiler_Theory.pdf (1 page).
+Output written on 1Compiler_Theory.pdf (8 pages).

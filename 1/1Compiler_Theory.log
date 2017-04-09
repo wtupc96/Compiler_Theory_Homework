@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.2.28)  8 APR 2017 15:57
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2017.2.28)  9 APR 2017 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1601,14 +1601,15 @@ Overfull \hbox (19.01591pt too wide) in paragraph at lines 723--724
  [] 
  []
 
-) [7] [8] (./1Compiler_Theory.aux) ) 
+) (./3_9.tex [7]) (./3_12.tex [8]) (./3_14.tex [9]) [10]
+(./1Compiler_Theory.aux) ) 
 Here is how much of TeX's memory you used:
- 29747 strings out of 493591
- 593148 string characters out of 6148418
- 761087 words of memory out of 5000000
- 32810 multiletter control sequences out of 15000+600000
+ 29766 strings out of 493591
+ 593858 string characters out of 6148418
+ 761219 words of memory out of 5000000
+ 32820 multiletter control sequences out of 15000+600000
  7574 words of font info for 49 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
  65i,11n,78p,10442b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on 1Compiler_Theory.pdf (8 pages).
+Output written on 1Compiler_Theory.pdf (10 pages).

@@ -1,0 +1,64 @@
+\paragraph{答：}
+\begin{enumerate}
+	\item[(a)]
+	得到DFA：
+	\begin{center}
+		\begin{table}[H]
+			\caption{状态转换矩阵}
+			\centering
+			\begin{tabular}{|c|c|c|}
+				\hline
+				$I$ & $I_{a}$ & $I_{b}$ \\\hline
+				\textcolor{green}{A} \{0\} & \textcolor{green}{B} \{0,1\} & \textcolor{green}{C} \{1\} \\\hline
+				\textcolor{green}{B} \{0,1\} & \textcolor{green}{B} \{0,1\} & \textcolor{green}{C} \{1\} \\\hline
+				\textcolor{green}{C} \{1\} & \textcolor{green}{A} \{0\} & \{\} \\\hline
+			\end{tabular}
+		\end{table}
+	\end{center}
+	进行化简，得到简化后的DFA：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-0.75)(2.42,0.75)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](0.42,-0.2){0.4}
+			\rput(0.42,-0.2){A}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.02,-0.2){0.4}
+			\rput(2.02,-0.2){B}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.82,-0.2)(1.62,-0.2)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.02,-0.6)(0.42,-0.6)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.02,-0.2)(0.02,0.33333334)(0.02,0.6)(0.42,0.6)(0.82,0.6)(0.82,0.33333334)(0.82,-0.2)
+			\rput[b](0.42,0.6){a}
+			\rput[b](1.22,-0.2){b}
+			\rput[t](1.22,-0.6){a}
+			\end{pspicture}
+		}
+	\end{center}
+
+	\item[(b)] 
+	将顶点划分为：\{0,1\}, \{2,4\}, \{3,5\}，得到化简之后的DFA：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-0.6975)(4.040548,0.6975)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](0.4205478,-0.1775){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0205479,-0.1775){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.6205478,-0.1775){0.4}
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8205478,-0.1775)(1.6205478,-0.1775)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0205479,-0.5775)(0.4205478,-0.5775)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4205477,-0.1775)(3.220548,-0.1775)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6205478,-0.5775)(2.0205479,-0.5775)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.019999977,-0.17611797)(0.020547822,0.6225)(0.019452132,0.62526405)(0.42,0.6238820237130832)(0.8205478,0.6225)(0.8194521,0.62526405)(0.82,-0.17611797)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.220548,-0.1775)(3.220548,0.6225)(3.220548,0.6225)(3.6205478,0.6225)(4.020548,0.6225)(4.020548,0.6225)(4.020548,-0.1775)
+			\rput(0.4205478,-0.1775){A}
+			\rput(2.0205479,-0.1775){B}
+			\rput(3.6205478,-0.1775){C}
+			\rput(0.4205478,0.6225){a}
+			\rput(1.2205478,-0.1775){b}
+			\rput(1.2205478,-0.5775){a}
+			\rput(2.8205478,-0.1775){b}
+			\rput(2.8205478,-0.5775){b}
+			\rput(3.6205478,0.6225){a}
+			\end{pspicture}
+		}
+	\end{center}
+\end{enumerate}

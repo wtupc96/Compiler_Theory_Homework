@@ -1,6 +1,80 @@
 \paragraph{答：}
 \begin{enumerate}
 	\item[(1)] 正规表达式为：$(0|1)^{*}010(0|1)^{*}$
-
-	\item[(2)] 正规表达式为：$$
+	画出相应的NFA：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-1.2251422)(5.642244,1.2251422)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.42224392,-0.0051422105){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.022244,-0.0051422105){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.622244,-0.0051422105){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](5.222244,-0.0051422105){0.4}
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.019999905,0.0016108266)(0.022243924,0.7948578)(0.017755885,1.2083639)(0.4199999,1.2016108266244854)(0.8222439,1.1948578)(0.8177559,0.80836385)(0.81999993,0.0016108266)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.022243924,-0.0051422105)(0.022243924,-0.8051422)(0.022243924,-1.2051423)(0.42224392,-1.2051422107219696)(0.8222439,-1.2051423)(0.8222439,-0.8051422)(0.8222439,-0.0051422105)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.8222437,-0.0051422105)(4.8222437,0.7948578)(4.8222437,1.1948578)(5.222244,1.1948577892780303)(5.622244,1.1948578)(5.622244,0.7948578)(5.622244,-0.0051422105)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.8222437,-0.0051422105)(4.8222437,-0.8051422)(4.8222437,-1.2051423)(5.222244,-1.2051422107219696)(5.622244,-1.2051423)(5.622244,-0.8051422)(5.622244,-0.0051422105)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8222439,-0.0051422105)(1.6222439,-0.0051422105)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4222438,-0.0051422105)(3.222244,-0.0051422105)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.022244,-0.0051422105)(4.8222437,-0.0051422105)
+			\rput(0.42224392,-0.0051422105){A}
+			\rput(2.022244,-0.0051422105){B}
+			\rput(3.622244,-0.0051422105){C}
+			\rput(5.222244,-0.0051422105){D}
+			\rput[b](0.42224392,-1.2051423){1}
+			\rput[b](1.2222439,-0.0051422105){0}
+			\rput[b](2.822244,-0.0051422105){1}
+			\rput[b](4.422244,-0.0051422105){0}
+			\rput[b](5.222244,-1.2051423){1}
+			\rput[t](0.42224392,1.1948578){0}
+			\rput[t](5.222244,1.1948578){0}
+			\end{pspicture}
+		}
+	\end{center}
+	将NFA确定化：
+	\begin{table}[H]
+		\caption{状态转换矩阵}
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			$I$ & $I_{0}$ & $I_{1}$ \\\hline
+			\textcolor{green}{0} \{A\} & \textcolor{green}{1} \{A,B\} & \textcolor{green}{0} \{A\} \\\hline
+			\textcolor{green}{1} \{A,B\} & \textcolor{green}{1} \{A,B\} & \textcolor{green}{2} \{A,C\} \\\hline
+			\textcolor{green}{2} \{A,C\} & \textcolor{green}{3} \{A,D\} & \textcolor{green}{0} \{A\} \\\hline
+			\textcolor{green}{3} \{A,D\} & \textcolor{green}{3} \{A,D\} & \textcolor{green}{3} \{A,D\} \\\hline
+		\end{tabular}
+	\end{table}
+	得到相应的DFA：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-1.2669734)(5.6419578,1.2669734)
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](0.421958,0.043026637){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.0219579,0.043026637){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.621958,0.043026637){0.4}
+			\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](5.221958,0.043026637){0.4}
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.02,0.046973363)(0.02,0.84697336)(0.02,1.2469734)(0.42,1.246973362996101)(0.82,1.2469734)(0.81804204,0.8509201)(0.82,0.046973363)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.621958,0.043026637)(1.621958,0.84302664)(1.621958,1.2430266)(2.0219579,1.243026636838913)(2.421958,1.2430266)(2.421958,0.84302664)(2.421958,0.043026637)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.821958,0.043026637)(4.821958,0.84302664)(4.821958,1.2430266)(5.221958,1.243026636838913)(5.621958,1.2430266)(5.621958,0.84302664)(5.621958,0.043026637)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.821958,0.043026637)(4.821958,-0.7569734)(4.821958,-1.1569734)(5.221958,-1.156973363161087)(5.621958,-1.1569734)(5.621958,-0.7569734)(5.621958,0.043026637)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.821958,0.043026637)(1.621958,0.043026637)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.421958,0.043026637)(3.221958,0.043026637)
+			\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.021958,0.043026637)(4.821958,0.043026637)
+			\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.621958,-0.35697335)(3.621958,-1.1569734)(2.821958,-1.1569734)(2.0219579,-1.156973363161087)(1.221958,-1.1569734)(0.421958,-1.1569734)(0.421958,-0.35697335)
+			\rput(0.421958,0.043026637){0}
+			\rput(2.0219579,0.043026637){1}
+			\rput(3.621958,0.043026637){2}
+			\rput(5.221958,0.043026637){3}
+			\rput(0.421958,0.84302664){1}
+			\rput(2.0219579,0.84302664){0}
+			\rput(5.221958,0.84302664){0}
+			\rput(1.221958,0.043026637){0}
+			\rput(2.821958,0.043026637){1}
+			\rput(4.421958,0.043026637){0}
+			\rput(2.0219579,-1.1569734){1}
+			\rput(5.221958,-1.1569734){1}
+			\end{pspicture}
+		}
+	\end{center}
+	\item[(2)] 正规表达式为：$ll$
 \end{enumerate}

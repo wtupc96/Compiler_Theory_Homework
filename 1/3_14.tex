@@ -1,0 +1,77 @@
+\paragraph{答：}
+根据题意，可以写出正规式：
+\begin{equation}
+	0^{*}(100^{*})^{*}0^{*}
+\end{equation}
+画出NFA：
+\begin{center}
+	\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+	{
+		\begin{pspicture}(0,-1.7358851)(5.112361,1.7358851)
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](1.4923611,-0.8258852){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](3.0923612,-0.8258852){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](4.692361,-0.8258852){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](2.292361,0.77411485){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.8923612,0.77411485){0.4}
+		\rput(1.4923611,-0.8258852){A}
+		\rput(3.0923612,-0.8258852){B}
+		\rput(2.292361,0.77411485){C}
+		\rput(3.8923612,0.77411485){D}
+		\rput(4.692361,-0.8258852){E}
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.0923611,-0.8258852)(1.0923611,-1.6258851)(1.4923611,-1.6258851)(1.4923611,-1.625885181427002)(1.4923611,-1.6258851)(1.8923612,-1.6258851)(1.8923612,-0.8258852)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.2923613,-0.8258852)(4.2923613,-1.6258851)(4.692361,-1.6258851)(4.692361,-1.625885181427002)(4.692361,-1.6258851)(5.092361,-1.6258851)(5.092361,-0.8258852)
+		\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.8923612,-0.8258852)(2.692361,-0.8258852)
+		\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.492361,-0.8258852)(4.2923613,-0.8258852)
+		\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.0923612,-0.42588517)(2.292361,0.3741148)
+		\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.8923612,0.3741148)(3.0923612,-0.42588517)
+		\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.692361,0.77411485)(3.492361,0.77411485)
+		\psbezier[linecolor=black, linewidth=0.04, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.8923612,1.1741148)(4.339575,2.068542)(4.692361,1.5741148)(4.692361,1.574114818572998)(4.692361,1.5741148)(5.092361,1.1741148)(4.2923613,0.77411485)
+		\rput(1.4923611,-1.6258851){0}
+		\rput(4.692361,-1.6258851){0}
+		\rput(2.692361,-0.025885182){1}
+		\rput(3.0923612,0.77411485){0}
+		\rput(4.692361,1.5741148){0}
+		\rput[b](2.292361,-0.8258852){$\varepsilon$}
+		\rput[b](3.8923612,-0.8258852){$\varepsilon$}
+		\rput[b](3.492361,-0.025885182){$\varepsilon$}
+		\psline[linecolor=black, linewidth=0.04, doubleline=true, doublesep=0.1, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(-0.107638896,-0.8258852)(1.0923611,-0.8258852)
+		\end{pspicture}
+	}
+\end{center}
+将NFA进行化简：
+\begin{table}[H]
+	\caption{状态转换矩阵}
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$I$ & $I_{0}$ & $I_{1}$ \\\hline
+		\textcolor{green}{0} \{A,B,E\} & \textcolor{green}{0} \{A,B,E\} & \textcolor{green}{1} \{C\} \\\hline
+		\textcolor{green}{1} \{C\} & \textcolor{green}{2} \{D,B,E\} & \{\} \\\hline
+		\textcolor{green}{2} \{D,B,E\} & \textcolor{green}{2} \{D,B,E\} & \textcolor{green}{1} \{C\} \\\hline
+	\end{tabular}
+\end{table}
+得到简化的DFA：
+\begin{center}
+	\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+	{
+		\begin{pspicture}(0,-0.71)(5.512361,0.71)
+		\psline[linecolor=black, linewidth=0.04, doubleline=true, doublesep=0.1, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(-0.107638896,-0.2)(1.4923611,-0.2)
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](1.8923612,-0.2){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer](3.492361,-0.2){0.4}
+		\pscircle[linecolor=black, linewidth=0.04, dimen=outer, doubleline=true, doublesep=0.02](5.092361,-0.2){0.4}
+		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(1.4954014,-0.19565025)(1.4984416,0.20869951)(1.4923611,0.6)(1.8954014,0.6043497575257213)(2.2984416,0.6086995)(2.2984416,0.20869951)(2.2954013,-0.19565025)
+		\psbezier[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(4.692361,-0.2)(4.692361,0.2)(4.692361,0.6)(5.092361,0.6)(5.492361,0.6)(5.492361,0.2)(5.492361,-0.2)
+		\psline[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(4.692361,-0.2)(3.8923612,-0.2)
+		\psline[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(3.492361,-0.6)(5.092361,-0.6)
+		\psline[linecolor=black, linewidth=0.04, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(2.292361,-0.2)(3.0923612,-0.2)
+		\rput(1.8923612,-0.2){0}
+		\rput(3.492361,-0.2){1}
+		\rput(5.092361,-0.2){2}
+		\rput(1.8923612,0.6){0}
+		\rput(2.692361,-0.2){1}
+		\rput(4.2923613,-0.2){1}
+		\rput(4.2923613,-0.6){0}
+		\rput(5.092361,0.6){0}
+		\end{pspicture}
+	}
+\end{center}

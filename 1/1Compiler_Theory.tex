@@ -1,4 +1,13 @@
 \documentclass[]{ctexart}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+}
+
 \usepackage{float}
 \usepackage{subfiles}
 \usepackage[usenames,dvipsnames]{pstricks}
@@ -28,12 +37,18 @@
 	\end{center}
 	\subfile{3_7.tex}
 	
+	
+	
+	
 	\item[3.9] 对下面情况给出DFA及正规表达式：
 	\begin{enumerate}
 		\item[(1)] \{0,1\}上的含有子串010的所有串；
 		\item[(2)] \{0,1\}上不含字串010的所有串。
 	\end{enumerate}
 	\subfile{3_9.tex}
+	
+	
+	
 	
 	\item[3.12] 将图3.18的(a)和(b)分别确定化和最少化。
 	\begin{center}
@@ -94,6 +109,9 @@
 	}
 	\end{center}
 	\subfile{3_12.tex}
+	
+	
+	
 	
 	\item[3.14] 构造一个DFA，它接收$\Sigma=\{0,1\}$上所有满足如下条件的字符串：每个1都有0直接跟在右边。
 	\subfile{3_14.tex}

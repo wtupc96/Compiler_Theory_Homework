@@ -1,0 +1,98 @@
+\paragraph{解：}
+\begin{enumerate}
+	\item 
+	\begin{itemize}
+		\item $FIRSTVT(S)=\{a \wedge (\}$
+		\item $FIRSTVT(T)=\{, \} \cup FIRSTVT(S)=\{a \wedge ( ,\}$
+		\item $LASTVT(S)=\{a \wedge )\}$
+		\item $LASTVT(T)=\{, \} \cup LASTVT(S)=\{a \wedge ) ,\}$
+	\end{itemize}
+	\item 优先表如下：
+	\begin{table}[H]
+		\caption{优先表}
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline & a & $\wedge$ & ( & ) & , & \# \\\hline
+			a & & & & $\gtrdot$ & $\gtrdot$ & $\gtrdot$ \\
+			
+			$\wedge$ & & & & $\gtrdot$ & $\gtrdot$ & $\gtrdot$ \\
+			
+			( & $\lessdot$ & $\lessdot$ & $\lessdot$ & $\eqcirc$ & $\lessdot$ & \\
+			
+			) & & & & $\gtrdot$ & $\gtrdot$ & $\gtrdot$ \\
+			
+			, & $\lessdot$ & $\lessdot$ & $\lessdot$ & $\gtrdot$ & $\gtrdot$ & \\
+			
+			\# & $\lessdot$ & $\lessdot$ & $\lessdot$ & & & $\eqcirc$ \\\hline
+		\end{tabular}
+	\end{table}
+	根据算符优先表可知$G_{2}$是算符优先文法。
+	
+	\item 优先函数构造图：
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-1.2)(8.8,1.2)
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](0.4,0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](2.0,0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](3.6,0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](5.2,0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](6.8,0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](8.4,0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](0.4,-0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](2.0,-0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](3.6,-0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](5.2,-0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](6.8,-0.8){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](8.4,-0.8){0.4}
+			\rput(0.4,0.8){$f_{a}$}
+			\rput(2.0,0.8){$f_{\wedge}$}
+			\rput(3.6,0.8){$f_{(}$}
+			\rput(5.2,0.8){$f_{)}$}
+			\rput(8.4,0.8){$f_{\#}$}
+			\rput(0.4,-0.8){$g_{a}$}
+			\rput(2.0,-0.8){$g_{\wedge}$}
+			\rput(3.6,-0.8){$g_{(}$}
+			\rput(5.2,-0.8){$g_{)}$}
+			\rput(6.8,-0.8){$g_{,}$}
+			\rput(8.4,-0.8){$g_{\#}$}
+			\rput(6.8,0.8){$f_{,}$}
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.4)(5.2,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.4)(6.8,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.4)(8.4,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,0.4)(5.2,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,0.4)(6.8,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,0.4)(8.4,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,-0.4)(3.6,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-0.4)(3.6,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,-0.4)(3.6,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,-0.4)(3.6,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,0.4)(5.2,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,0.4)(6.8,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,0.4)(8.4,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,-0.4)(6.8,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-0.4)(6.8,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,-0.4)(6.8,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,0.4)(5.2,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.8,0.4)(6.8,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,-0.4)(8.4,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-0.4)(8.4,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,-0.4)(8.4,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.2,-0.4)(5.2,0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.4,0.4)(8.4,-0.4)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.6,0.4)(5.2,-0.4)
+			\end{pspicture}
+		}
+	\end{center}
+	由图可得到优先表：
+	\begin{table}[H]
+		\caption{优先函数}
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			& a & $\wedge$ & ( & ) & , & \# \\\hline
+			f & 7 & 7 & 2 & 6 & 6 & 2 \\
+			g & 8 & 8 & 7 & 7 & 5 & 2 \\\hline
+		\end{tabular}
+	\end{table}
+\end{enumerate}

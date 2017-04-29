@@ -1,0 +1,109 @@
+\documentclass[]{ctexart}
+\usepackage{subfiles}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[normalem]{ulem}
+
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage[space]{grffile} % For spaces in paths
+\usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+\patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+}
+
+\usepackage{afterpage}
+
+%\newcommand \blankpage{
+%	\null
+%	\thispagestyle{empty}
+%	\addtocounter{page}{-1}
+%	\newpage
+%}
+
+
+%opening
+\title{编译原理 \\ 作业 3}
+\author{软件42 \\ 欧阳鹏程 \\ 2141601030 \\ 版权声明：Creative Commons BY-NC-SY}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item[1] 令文法$G_{1}$为：
+	\begin{align*}
+		E &\to E+T | T \\
+		T &\to T*F | F \\
+		F &\to (E) | i
+	\end{align*}
+	证明E+T*F是它的一个句型，指出这个句型的所有短语，直接短语和句柄。
+	%\subfile{1ans.tex}
+	
+	\item[2] 考虑下面的表格结构文法$G_{2}$:
+	\begin{align*}
+		S &\to a | \wedge | (T) \\
+		T &\to T, S | S
+	\end{align*}
+	\begin{enumerate}
+		\item \sout{给出(a, (a, a))和(((a, a), $\wedge$, (a)), a)的最左和最右推导。}
+		\item \sout{指出(((a, a), $\wedge$, (a)), a)的规范归约及每一步的句柄。根据这个规范归约，给出“移进-归约”的过程，并给出它的语法树自下而上的构造过程。}
+	\end{enumerate}
+	
+	\item[3]
+	\begin{enumerate}
+		\item 计算练习2文法$G_{2}$的FIRSTVT和LASTVT
+		\item 计算$G_{2}$的优先关系。$G_{2}$是一个算符优先文法吗？
+		\item 计算$G_{2}$的优先函数。
+		\item \sout{给出输入串(a, (a, a))的算符优先分析过程。}
+	\end{enumerate}
+	%\subfile{3ans.tex}
+	
+	\item[5] 考虑文法
+	\begin{align*}
+		S &\to AS | b \\
+		A &\to SA | a
+	\end{align*}
+	\begin{enumerate}
+		\item 列出这个文法的所有LR(0)项目。
+		\item 构造这个文法的LR(0)项目集规范族及识别活前缀的DFA。
+		\item 这个文法是SLR的吗？若是，构造出它的SLR分析表。
+		\item \sout{这个文法是LALR或LR(1)的吗？}
+	\end{enumerate}
+	\subfile{5ans.tex}
+
+	\item[7] 证明下面文法是SLR(1)但不是LR(0)的。
+	\begin{align*}
+		S &\to A \\
+		A &\to Ab | bBa \\
+		B &\to aAc | a | aAb
+	\end{align*}
+	
+	\item[8] 证明下面的文法
+	\begin{align*}
+		S &\to AaAb | BbBa \\
+		A &\to \epsilon \\
+		B &\to \epsilon
+	\end{align*}
+	\sout{是LL(1)的但}不是SLR(1)的。
+	
+	\item[9] 证明下面文法：
+	\begin{align*}
+		S &\to Aa | bAc | Bc | bBa \\
+		A &\to d
+	\end{align*}
+	\sout{是LALR(1)的但}不是SLR(1)的。
+\end{enumerate}
+
+\end{document}

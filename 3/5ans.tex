@@ -1,0 +1,122 @@
+\paragraph{解：}
+\begin{enumerate}
+	\item 
+	\begin{enumerate}
+		\item $S' \to \cdot S$
+		\item $S' \to S \cdot$
+		\item $S \to \cdot AS$
+		\item $S \to A \cdot S$
+		\item $S \to AS \cdot$
+		\item $S \to \cdot b$
+		\item $S \to b \cdot$
+		\item $A \to \cdot SA$
+		\item $A \to S \cdot A$
+		\item $A \to SA \cdot$
+		\item $A \to \cdot a$
+		\item $A \to a \cdot$	
+	\end{enumerate}
+
+	\item 项目集规范族：
+	\begin{align*}
+		I_{0} &= \{S' \to \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\} \\	
+		I_{1} &= GO(I_{0}, S) = \{S' \to S \cdot, A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\} \\
+		I_{2} &= GO(I_{0}, A) = \{S \to A \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\} \\
+		I_{3} &= GO(I_{0}, b) = \{S \to b \cdot\} \\
+		I_{4} &= GO(I_{0}, a) = \{S \to a \cdot\} \\
+		I_{5} &= GO(I_{1}, A) = \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b\, A \to \cdot SA, A \to \cdot a\} \\	
+		I_{6} &= GO(I_{1}, S) = \{A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\} \\	
+		GO(I_{1}, a)&= \{A \to a \cdot\} = I_{4} \\	
+		GO(I_{1}, b)&= \{S \to b \cdot\} = I_{3}\\
+		I_{7} &= GO(I_{2}, S) = \{S \to AS \cdot, A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\} \\
+		GO(I_{2}, A)&= \{S \to A \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\} = I_{2} \\
+		GO(I_{2}, b)&= \{S \to b \cdot\}=I_{3} \\
+		GO(I_{2}, a)&= \{A \to a \cdot\}=I_{4} \\
+		GO(I_{5}, S)&= \{S \to AS \cdot, A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\}=I_{7} \\
+		GO(I_{5}, A)&= \{S \to A \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\}=I_{2} \\
+		GO(I_{5}, b)&= \{S \to b \cdot\}=I_{3} \\
+		GO(I_{5}, a)&= \{A \to a \cdot\}=I_{4} \\
+		GO(I_{6}, A)&= \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b\, A \to \cdot SA, A \to \cdot a\}=I_{5} \\
+		GO(I_{6}, S)&= \{A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\}=I_{6} \\
+		GO(I_{6}, a)&= \{A \to a \cdot\}=I_{4} \\
+		GO(I_{6}, b)&= \{S \to b \cdot\}=I_{3} \\
+		GO(I_{7}, A)&= \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b\, A \to \cdot SA, A \to \cdot a\}=I_{5} \\
+		GO(I_{7}, S)&= \{A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\}=I_{6} \\
+		GO(I_{7}, a)&= \{A \to a \cdot\}=I_{4} \\
+		GO(I_{7}, b)&= \{S \to b \cdot\}=I_{3}
+	\end{align*}
+	故这个文法的LR(0)项目集规范族为$\{I_{0}, I_{1}, I_{2}, I_{3}, I_{4}, I_{5}, I_{6}, I_{7}\}$。\\
+	DFA:
+	\begin{center}
+		\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+		{
+			\begin{pspicture}(0,-4.465)(10.92,4.465)
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](3.6,-0.054999925){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](6.0,-0.054999925){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](2.0,2.7450001){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](7.6,2.7450001){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](2.0,-2.855){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](7.6,-2.855){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](0.4,-0.054999925){0.4}
+			\pscircle[linecolor=black, linewidth=0.02, dimen=outer](9.6,-0.054999925){0.4}
+			\rput(3.6,-0.054999925){$I_{3}$}
+			\rput(6.0,-0.054999925){$I_{4}$}
+			\rput(2.0,2.7450001){$I_{2}$}
+			\rput(2.0,-2.855){$I_{5}$}
+			\rput(7.6,-2.855){$I_{6}$}
+			\rput(7.6,2.7450001){$I_{7}$}
+			\rput(0.4,-0.054999925){$I_{0}$}
+			\rput(9.6,-0.054999925){$I_{1}$}
+			\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.3450001)(0.4,4.3450003)(0.4,4.3450003)(1.6,4.345000076293945)(2.8,4.3450003)(7.2,4.3450003)(8.4,4.3450003)(9.6,4.3450003)(9.6,4.3450003)(9.6,0.3450001)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.3450001)(2.0,2.345)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.8,-0.054999925)(3.2,-0.054999925)
+			\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.4,0.3450001)(1.2,0.74500006)(2.2,0.74500006)(3.2,0.7450000762939453)(4.2,0.74500006)(5.2,0.74500006)(6.0,0.3450001)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.6,-0.45499992)(8.0,-2.855)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.2,-0.054999925)(6.4,-0.054999925)
+			\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.6,-0.45499992)(8.4,-0.8549999)(7.4,-0.8549999)(6.4,-0.8549999237060547)(5.4,-0.8549999)(4.8,-0.8549999)(3.6,-0.45499992)
+			\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.6,2.7450001)(0.8,3.145)(1.2,3.545)(1.2,3.5450000762939453)(1.2,3.545)(1.5527864,4.0394273)(2.0,3.145)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,2.345)(3.6,0.3450001)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,2.345)(6.0,0.3450001)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.4,2.7450001)(7.2,2.7450001)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-2.455)(2.0,2.345)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-2.455)(3.6,-0.45499992)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-2.455)(6.0,-0.45499992)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(2.0,-2.455)(7.6,2.345)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,-2.855)(3.6,-0.45499992)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,-2.855)(6.0,-0.45499992)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,-2.855)(2.4,-2.855)
+			\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.6,-3.2549999)(8.047214,-4.149427)(8.4,-3.655)(8.4,-3.654999923706055)(8.4,-3.655)(8.894427,-3.3022134)(8.0,-2.855)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.2,2.7450001)(3.6,0.3450001)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.6,2.345)(6.0,0.3450001)
+			\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.6,2.345)(7.6,-2.455)
+			\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(8.0,2.7450001)(10.8,2.7450001)(10.8,3.145)(10.8,1.5450000762939453)(10.8,-0.054999925)(11.2,-4.455)(10.4,-4.455)(9.6,-4.455)(11.6,-4.455)(7.0285716,-4.455)(2.4571428,-4.455)(2.0,-4.455)(2.0,-3.2549999)
+			\rput(4.8,4.3450003){S}
+			\rput(1.2,1.5450001){A}
+			\rput(1.2,-0.054999925){b}
+			\rput(1.2,0.74500006){a}
+			\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.6,-0.45499992)(9.6,-3.655)(9.6,-4.055)(8.8,-4.054999923706054)(8.0,-4.055)(2.0,-4.455)(2.0,-3.2549999)
+			\rput(6.4,-4.055){A}
+			\rput(8.8,-1.655){S}
+			\rput(8.4,-0.8549999){b}
+			\rput(8.4,-0.054999925){a}
+			\rput(4.8,2.7450001){S}
+			\rput(1.2,3.545){A}
+			\rput(2.8,1.5450001){b}
+			\rput(3.6,1.5450001){a}
+			\rput(4.8,-0.054999925){S}
+			\rput(2.0,-1.2549999){A}
+			\rput(3.2,-0.8549999){b}
+			\rput(3.6,-1.655){a}
+			\rput(4.8,-2.855){A}
+			\rput(8.4,-3.655){S}
+			\rput(6.8,-2.0549998){a}
+			\rput(6.0,-2.0549998){b}
+			\rput(10.8,-2.0549998){A}
+			\rput(7.6,0.74500006){S}
+			\rput(6.8,1.1450001){a}
+			\rput(6.0,1.1450001){b}
+			\end{pspicture}
+		}
+	\end{center}
+
+	\item
+\end{enumerate}

@@ -1,1 +1,284 @@
 \paragraph{解：}
+拓广文法为：
+\begin{center}
+	\begin{enumerate}
+		\item[(0)] $S' \to S$
+		\item[(1)] $S \to A$ 
+		\item[(2)] $A \to Ab$
+		\item[(3)] $A \to bBa$
+		\item[(4)] $B \to aAc$
+		\item[(5)] $B \to a$
+		\item[(6)] $B \to aAb$
+	\end{enumerate}
+\end{center}
+该文法的项目如下:
+\begin{center}
+	\begin{enumerate}
+		\item $S' \to \cdot S$
+		\item $S' \to S \cdot$
+		\item $S \to \cdot A$
+		\item $S \to A \cdot$
+		\item $A \to \cdot Ab$
+		\item $A \to A \cdot b$
+		\item $A \to Ab \cdot$
+		\item $A \to \cdot bBa$
+		\item $A \to b \cdot Ba$
+		\item $A \to bB \cdot a$
+		\item $A \to bBa \cdot$
+		\item $B \to \cdot aAc$
+		\item $B \to a \cdot Ac$
+		\item $B \to aA \cdot c$
+		\item $B \to aAc \cdot$
+		\item $B \to \cdot a$
+		\item $B \to a \cdot$
+		\item $B \to \cdot aAb$
+		\item $B \to a \cdot Ab$
+		\item $B \to aA \cdot b$
+		\item $B \to aAb \cdot$
+	\end{enumerate}
+\end{center}
+得到NFA：
+\begin{center}
+	\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+	{
+		\begin{pspicture}(0,-4.6599975)(13.612361,4.6599975)
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](1.1523612,0.9500027){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](2.752361,2.5500026){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](2.752361,0.9500027){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](2.752361,-0.6499973){0.4}
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.5523611,0.9500027)(2.3523612,0.9500027)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.5523611,0.9500027)(2.3523612,2.5500026)
+		\rput(1.1523612,0.9500027){a}
+		\rput(2.752361,0.9500027){b}
+		\rput(2.752361,2.5500026){c}
+		\rput(2.752361,-0.6499973){d}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](4.352361,2.5500026){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](4.352361,-0.6499973){0.4}
+		\rput(4.352361,2.5500026){e}
+		\rput(4.352361,-0.6499973){h}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](5.952361,2.5500026){0.4}
+		\rput(5.952361,2.5500026){f}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](7.552361,2.5500026){0.4}
+		\rput(7.552361,2.5500026){g}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](5.952361,-0.6499973){0.4}
+		\rput(5.952361,-0.6499973){i}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](7.552361,0.9500027){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](7.552361,-0.6499973){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](7.552361,-2.2499974){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](7.552361,-3.8499973){0.4}
+		\rput(7.552361,0.9500027){j}
+		\rput(7.552361,-0.6499973){l}
+		\rput(7.552361,-2.2499974){p}
+		\rput(7.552361,-3.8499973){r}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](9.152361,0.9500027){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](9.152361,-0.6499973){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](9.152361,-2.2499974){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](9.152361,-3.8499973){0.4}
+		\rput(9.152361,0.9500027){k}
+		\rput(9.152361,-0.6499973){m}
+		\rput(9.152361,-2.2499974){q}
+		\rput(9.152361,-3.8499973){s}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](10.752361,-0.6499973){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](12.352361,-0.6499973){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](10.752361,-3.8499973){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](12.352361,-3.8499973){0.4}
+		\rput(10.752361,-0.6499973){n}
+		\rput(12.352361,-0.6499973){o}
+		\rput(10.752361,-3.8499973){t}
+		\rput(12.352361,-3.8499973){u}
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.1523612,2.5500026)(3.952361,2.5500026)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.7523613,2.5500026)(5.552361,2.5500026)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.352361,2.1500027)(4.352361,-0.24999732)
+		\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.952361,2.5500026)(3.6361334,3.498686)(3.952361,3.7500026)(4.352361,3.7500026845932006)(4.7523613,3.7500026)(5.0685887,3.498686)(4.7523613,2.5500026)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.7523613,-0.6499973)(5.552361,-0.6499973)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.352361,2.5500026)(7.152361,2.5500026)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.352361,-0.6499973)(7.152361,-0.6499973)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.352361,-0.6499973)(7.152361,-2.2499974)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.352361,-0.6499973)(7.152361,-3.8499973)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.952361,0.9500027)(8.752361,0.9500027)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.952361,-0.6499973)(8.752361,-0.6499973)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.952361,-2.2499974)(8.752361,-2.2499974)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(7.952361,-3.8499973)(8.752361,-3.8499973)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.5523615,-0.6499973)(10.352361,-0.6499973)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(11.152361,-0.6499973)(11.952361,-0.6499973)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.5523615,-3.8499973)(10.352361,-3.8499973)
+		\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.163091,-3.4667866)(9.96309,-2.2667866)(13.5523615,-3.8499973)(13.5523615,-1.8499973154067992)(13.5523615,0.15000269)(13.5523615,1.7500027)(13.5523615,3.3500028)(13.5523615,4.9500027)(7.152361,4.5500026)(5.952361,4.5500026)(4.7523613,4.5500026)(5.16309,2.9332135)(4.7630906,2.5332134)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(11.152361,-3.8499973)(11.952361,-3.8499973)
+		\rput(1.9523611,1.7500027){$\epsilon$}
+		\rput(1.9523611,0.9500027){S}
+		\rput(3.552361,2.5500026){$\epsilon$}
+		\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.1523612,2.5500026)(3.552361,2.1500027)(3.552361,1.9500027)(3.552361,0.9500026845932007)(3.552361,-0.049997315)(3.552361,-0.24999732)(3.1523612,-0.6499973)
+		\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.1523612,2.5500026)(3.552361,2.1500027)(3.552361,2.1500027)(3.952361,1.3500026845932007)(4.352361,0.5500027)(4.352361,0.15000269)(4.352361,-0.24999732)
+		\rput(3.952361,1.3500026){$\epsilon$}
+		\rput(3.552361,0.9500027){A}
+		\rput(4.352361,3.7500026){$\epsilon$}
+		\rput(4.352361,0.9500027){$\epsilon$}
+		\rput(5.152361,2.5500026){A}
+		\rput(5.152361,-0.6499973){b}
+		\rput(6.7523613,2.5500026){b}
+		\rput(6.7523613,-0.6499973){$\epsilon$}
+		\rput(6.7523613,-1.4499973){$\epsilon$}
+		\rput(6.7523613,-2.2499974){$\epsilon$}
+		\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.352361,-0.6499973)(6.352361,-0.24999732)(6.352361,0.9500027)(6.7523613,0.9500026845932007)(7.152361,0.9500027)(6.7523613,0.9500027)(7.152361,0.9500027)
+		\rput(6.7523613,0.9500027){B}
+		\rput(8.352361,0.9500027){a}
+		\rput(8.352361,-0.6499973){a}
+		\rput(8.352361,-2.2499974){a}
+		\rput(8.352361,-3.8499973){A}
+		\rput(8.352361,1.7500027){$\epsilon$}
+		\rput(9.952361,3.3500028){$\epsilon$}
+		\rput(9.952361,-0.6499973){A}
+		\rput(11.5523615,-0.6499973){c}
+		\rput(13.5523615,0.5500027){$\epsilon$}
+		\rput(9.952361,-3.8499973){A}
+		\rput(11.5523615,-3.8499973){b}
+		\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.152361,-4.249997)(8.752361,-4.649997)(8.752361,-4.649997)(7.152361,-4.649997315406799)(5.552361,-4.649997)(5.152361,-4.649997)(4.7523613,-4.249997)(4.352361,-3.8499973)(4.352361,-3.8499973)(4.352361,-1.0499973)
+		\rput(5.152361,-4.249997){$\epsilon$}
+		\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.152361,-0.24999732)(10.352361,-0.24999732)(10.352361,0.15000269)(10.352361,0.9500026845932007)(10.352361,1.7500027)(10.352361,1.7500027)(10.352361,2.5500026)(10.352361,3.3500028)(9.952361,3.3500028)(7.552361,3.3500028)(5.152361,3.3500028)(5.152361,3.3500028)(4.7523613,2.5500026)
+		\psbezier[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(9.152361,-0.24999732)(9.952361,-0.24999732)(9.952361,0.15000269)(9.952361,0.15000268459320068)(9.952361,0.15000269)(9.952361,0.9500027)(9.952361,1.3500026)(9.952361,1.7500027)(9.952361,1.7500027)(8.752361,1.7500027)(7.552361,1.7500027)(7.552361,1.7500027)(5.952361,1.7500027)(4.352361,1.7500027)(4.352361,0.15000269)(4.352361,-0.24999732)
+		\psline[linecolor=black, linewidth=0.06, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(-0.04763889,0.9500027)(0.7523611,0.9500027)
+		\end{pspicture}
+	}
+\end{center}
+用子集法对NFA进行确定化：
+\begin{table}[H]
+	\caption{状态转换矩阵}
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		$I$ & $I_{S}$ &  $I_{A}$ & $I_{B}$ & $I_{a}$ & $I_{b}$ & $I_{c}$ \\\hline
+		\textcircled{0}\{a, c, e, h\} & \{b\} & \{d, f\} & \{\} & \{\} & \{i, l, p, r\} & \{\}\\\hline
+		\textcircled{1}\{b\} & \{\} & \{\} & \{\} & \{\} & \{\} & \{\}\\\hline
+		\textcircled{2}\{d, f\} & \{\} & \{\} & \{\} & \{\} & \{g\} & \{\}\\\hline
+		\textcircled{3}\{i, l, p, r\} & \{\} & \{s, h, e\} & \{j\} & \{m, e, h, q\} & \{\} & \{\}\\\hline
+		\textcircled{4}\{g\} & \{\} & \{\} & \{\} & \{\} & \{\} & \{\}\\\hline
+		\textcircled{5}\{s, h, e\} & \{\} & \{t, f\} & \{\} & \{\} & \{i, l, p, r\} & \{\}\\\hline
+		\textcircled{6}\{j\} & \{\} & \{\} & \{\} & \{k\} & \{\} & \{\}\\\hline
+		\textcircled{7}\{m, e, h, q\} & \{\} & \{n, f\} & \{\} & \{\} & \{i, l, p, r\} & \{\}\\\hline
+		\textcircled{8}\{t, f\} & \{\} & \{\} & \{\} & \{\} & \{g, u\} & \{\}\\\hline
+		\textcircled{9}\{k\} & \{\} & \{\} & \{\} & \{\} & \{\} & \{\}\\\hline
+		\textcircled{10}\{n, f\} & \{\} & \{\} & \{\} & \{\} & \{g\} & \{o\}\\\hline
+		\textcircled{11}\{g, u\} & \{\} & \{\} & \{\} & \{\} & \{\} & \{\}\\\hline
+		\textcircled{12}\{o\} & \{\} & \{\} & \{\} & \{\} & \{\} & \{\}\\\hline
+	\end{tabular}
+\end{table}
+得到相应的DFA：
+\begin{center}
+	\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+	{
+		\begin{pspicture}(0,-2.8)(9.562361,2.8)
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](1.5523611,0.8){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](3.1523612,2.4){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](3.1523612,0.8){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](3.1523612,-0.8){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](4.7523613,2.4){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](4.7523613,0.8){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](4.7523613,-0.8){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](4.7523613,-2.4){0.4}
+		\rput(1.5523611,0.8){0}
+		\rput(3.1523612,0.8){1}
+		\rput(3.1523612,2.4){2}
+		\rput(3.1523612,-0.8){3}
+		\rput(4.7523613,0.8){5}
+		\rput(4.7523613,-0.8){6}
+		\rput(4.7523613,-2.4){7}
+		\rput(4.7523613,2.4){4}
+		\rput(6.352361,0.8){8}
+		\rput(6.352361,-0.8){9}
+		\rput(7.952361,0.8){11}
+		\rput(7.952361,-0.8){10}
+		\rput(7.952361,-2.4){12}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](6.352361,0.8){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](7.952361,0.8){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](6.352361,-0.8){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer, doubleline=true, doublesep=0.02](7.952361,-2.4){0.4}
+		\pscircle[linecolor=black, linewidth=0.02, dimen=outer](7.952361,-0.8){0.4}
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.9523611,0.8)(2.752361,2.4)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.9523611,0.8)(2.752361,0.8)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(1.9523611,0.8)(2.752361,-0.8)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.552361,2.4)(4.352361,2.4)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.552361,-0.8)(4.352361,-0.8)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.1523612,-1.2)(4.352361,-2.4)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.152361,0.8)(5.952361,0.8)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.1523612,-0.4)(4.352361,0.8)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.7523613,0.4)(3.552361,-0.8)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(5.152361,-0.8)(5.952361,-0.8)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(4.7523613,-2.0)(3.552361,-0.8)
+		\psline[linecolor=black, linewidth=0.02, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(6.7523613,0.8)(7.552361,0.8)
+		\psline[linecolor=black, linewidth=0.06, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(-0.04763889,0.8)(1.1523612,0.8)
+		\psline[linecolor=black, linewidth=0.02, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(5.152361,-2.4)(7.552361,-0.8)
+		\psline[linecolor=black, linewidth=0.02, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(7.952361,-1.2)(7.952361,-2.0)
+		\psbezier[linecolor=black, linewidth=0.02, dotsize=0.07055555cm 2.0,arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{cc->}(8.352361,-0.8)(9.5523615,-0.8)(9.5523615,-0.8)(9.5523615,-0.4)(9.5523615,0.0)(9.5523615,1.6)(9.5523615,2.0)(9.5523615,2.4)(9.5523615,2.4)(5.152361,2.4)
+		\rput(2.3523612,0.8){S}
+		\rput(2.3523612,1.6){A}
+		\rput(2.3523612,0.0){b}
+		\rput(3.952361,2.4){b}
+		\rput(3.552361,0.0){A}
+		\rput(3.952361,-0.8){B}
+		\rput(3.552361,-1.6){a}
+		\rput(5.552361,0.8){A}
+		\rput(4.352361,0.0){b}
+		\rput(5.552361,-0.8){a}
+		\rput(6.352361,-1.6){A}
+		\rput(4.352361,-1.6){b}
+		\rput(7.152361,0.8){b}
+		\rput(7.152361,2.4){b}
+		\rput(7.952361,-1.6){c}
+		\end{pspicture}
+	}
+\end{center}
+得到LR(0)分析表：
+\begin{table}[H]
+	\caption{LR(0)分析表}
+	\centering
+	\begin{tabular}{|c|cccc|ccc|}
+		\hline
+		状态 & & & ACTION & & & GOTO & \\
+		& a & b & c & \# & S & A & B \\\hline
+		0 &  & $s_{4}$ &  &  & 2 & 3 & \\
+		1 &  &  &  & acc &  &  & \\
+		2 & $r_{1}$ & $r_{1}$, $s_{4}$ & $r_{1}$ & $r_{1}$ &  &  & \\
+		3 & $s_{7}$ &  &  &  & 6 & 7 & \\
+		4 & $r_{2}$ & $r_{2}$ & $r_{2}$ & $r_{2}$ &  &  & \\
+		5 &  & $s_{3}$ &  &  &  & 9 & \\
+		6 & $s_{9}$ &  &  &  &  &  & \\
+		7 & $r_{5}$ & $r_{5}$, $s_{3}$ & $r_{5}$ & $r_{5}$ &  & 10 & \\
+		8 &  & $s_{11}$ &  &  &  &  & \\
+		9 & $r_{3}$ & $r_{3}$ & $r_{3}$ & $r_{3}$ &  &  & \\
+		10 &  & $s_{4}$ & $s_{12}$ &  &  &  & \\
+		11 & $r_{2}$, $r_{6}$ & $r_{2}$, $r_{6}$ & $r_{2}$, $r_{6}$ & $r_{2}$, $r_{6}$ &  &  & \\
+		12 & $r_{4}$ & $r_{4}$ & $r_{4}$ & $r_{4}$ &  &  & \\\hline
+	\end{tabular}
+\end{table}
+可知分析表中存在“移进-归约”和“归约-归约”冲突，故原文法不是LR(0)文法。\\
+求解拓广文法中非终结符的FIRST和FOLLOW集如下：
+\begin{align*}
+	&FIRST(S')=\{b\} &\quad FOLLOW(S')=\{\#\} \\
+	&FIRST(S)=\{b\} &\quad FOLLOW(S)=\{\#\} \\
+	&FIRST(A)=\{b\} &\quad FOLLOW(A)=\{b, c, \#\} \\
+	&FIRST(B)=\{a\} &\quad FOLLOW(B)=\{a\}
+\end{align*}
+对于状态2的“移进-归约”冲突，检查$\{b\} \cap FOLLOW(S) = \emptyset$；对于状态11的“归约-归约”冲突，检查$FOLLOW(A) \cap FOLLOW(B) = \emptyset$可知，上述两状态的冲突都可以得到SLR(1)办法的消解。同理，可以列出拓广文法的SLR表如下：
+\begin{table}[H]
+	\caption{SLR(1)分析表}
+	\centering
+	\begin{tabular}{|c|cccc|ccc|}
+		\hline
+		状态 & & & ACTION & & & GOTO & \\
+		& a & b & c & \# & S & A & B \\\hline
+		0 &  & $s_{4}$ &  &  & 2 & 3 & \\
+		1 &  &  &  & acc &  &  & \\
+		2 &  & $s_{4}$ &  & $r_{1}$ &  &  & \\
+		3 & $s_{7}$ &  &  &  & 6 & 7 & \\
+		4 & $r_{2}$ & $r_{2}$ & $r_{2}$ & $r_{2}$ &  &  & \\
+		5 &  & $s_{3}$ &  &  &  & 9 & \\
+		6 & $s_{9}$ &  &  &  &  &  & \\
+		7 & $r_{5}$ & $r_{5}$, $s_{3}$ & $r_{5}$ & $r_{5}$ &  & 10 & \\
+		8 &  & $s_{11}$ &  &  &  &  & \\
+		9 & $r_{3}$ & $r_{3}$ & $r_{3}$ & $r_{3}$ &  &  & \\
+		10 &  & $s_{4}$ & $s_{12}$ &  &  &  & \\
+		11 & $r_{6}$ & $r_{2}$ & $r_{2}$ & $r_{2}$&  &  & \\
+		12 & $r_{4}$ & $r_{4}$ & $r_{4}$ & $r_{4}$ &  &  & \\\hline
+	\end{tabular}
+\end{table}
+至此，我们可以说原文法是SLR(1)的而非LR(0)的。

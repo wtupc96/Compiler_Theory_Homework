@@ -23,7 +23,7 @@
 		I_{2} &= GO(I_{0}, A) = \{S \to A \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\} \\
 		I_{3} &= GO(I_{0}, b) = \{S \to b \cdot\} \\
 		I_{4} &= GO(I_{0}, a) = \{S \to a \cdot\} \\
-		I_{5} &= GO(I_{1}, A) = \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b\, A \to \cdot SA, A \to \cdot a\} \\	
+		I_{5} &= GO(I_{1}, A) = \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\} \\	
 		I_{6} &= GO(I_{1}, S) = \{A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\} \\	
 		GO(I_{1}, a)&= \{A \to a \cdot\} = I_{4} \\	
 		GO(I_{1}, b)&= \{S \to b \cdot\} = I_{3}\\
@@ -35,11 +35,11 @@
 		GO(I_{5}, A)&= \{S \to A \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\}=I_{2} \\
 		GO(I_{5}, b)&= \{S \to b \cdot\}=I_{3} \\
 		GO(I_{5}, a)&= \{A \to a \cdot\}=I_{4} \\
-		GO(I_{6}, A)&= \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b\, A \to \cdot SA, A \to \cdot a\}=I_{5} \\
+		GO(I_{6}, A)&= \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\}=I_{5} \\
 		GO(I_{6}, S)&= \{A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\}=I_{6} \\
 		GO(I_{6}, a)&= \{A \to a \cdot\}=I_{4} \\
 		GO(I_{6}, b)&= \{S \to b \cdot\}=I_{3} \\
-		GO(I_{7}, A)&= \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b\, A \to \cdot SA, A \to \cdot a\}=I_{5} \\
+		GO(I_{7}, A)&= \{A \to SA \cdot, S \to A \cdot S, S \to \cdot AS, S \to \cdot b, A \to \cdot SA, A \to \cdot a\}=I_{5} \\
 		GO(I_{7}, S)&= \{A \to S \cdot A, A \to \cdot SA, A \to \cdot a, S \to \cdot AS, S \to \cdot b\}=I_{6} \\
 		GO(I_{7}, a)&= \{A \to a \cdot\}=I_{4} \\
 		GO(I_{7}, b)&= \{S \to b \cdot\}=I_{3}
@@ -118,5 +118,11 @@
 		}
 	\end{center}
 
-	\item
+	\item 给出文法中非终结符的FIRST集和FOLLOW集：
+	\begin{align*}
+		FIRST(S')=\{b, a\} & FOLLOW(S')=\{\#\} \\
+		FIRST(S)=\{b, a\} & FOLLOW(S)=\{a, b, \#\} \\
+		FIRST(A)=\{a, b\} & FOLLOW(A)=\{b, a\}
+	\end{align*}
+	对于$I_{5}: FOLLOW(A) \cap \{a\} \neq \varnothing, FOLLOW(A) \cap \{b\} \neq \varnothing, I_{7}: FOLLOW(S) \cap \{a\} \neq \emptyset, FOLLOW(S) \cap \{b\} \neq \emptyset$，存在“移进-归约”冲突并且无法消解，故该文法不是SLR文法。
 \end{enumerate}

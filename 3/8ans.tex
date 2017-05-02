@@ -1,1 +1,15 @@
 \paragraph{解：}
+该文法的拓广文法的非终结符的FIRST和FOLLOW集为：
+\begin{align*}
+	&FIRST(S')=\{\epsilon, a, b\} &FOLLOW(S')=\{\#\} \\
+	&FIRST(S)=\{\epsilon, a, b\} &FOLLOW(S)=\{\#\} \\
+	&FIRST(A)=\{\epsilon\} &FOLLOW(A)=\{a, b\} \\
+	&FIRST(B)=\{\epsilon\} &FOLLOW(B)=\{b, a\} \\
+\end{align*}
+该文法的拓广文法的项目集规范族为：
+\begin{align*}
+	I_{0}&=\{S' \to \cdot S, S \to \cdot AaAb, S \to \cdot BbBa, A \to \cdot, B \to \cdot\} \\
+	I_{1}&={...} \\
+	&...
+\end{align*}
+对于$I_{0}$而言，$A \to \cdot$和$B \to \cdot$会产生“归约-归约”冲突，并且检查FOLLOW(A)和FOLLOW(B)有$FOLLOW(A) \cap FOLLOW(B) = \{a, b\} \neq \emptyset$，所以该冲突无法得到解决，故原文法不是SLR(1)的。

@@ -1,0 +1,203 @@
+\documentclass[]{ctexart}
+\usepackage{subfiles}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+}
+
+\usepackage{afterpage}
+
+%\newcommand \blankpage{
+%	\null
+%	\thispagestyle{empty}
+%	\addtocounter{page}{-1}
+%	\newpage
+%}
+
+
+%opening
+\title{编译原理 \\ 作业 4}
+\author{软件42 \\ 欧阳鹏程 \\ 2141601030 \\ 版权声明：Creative Commons BY-NC-SY}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	\item[1.] 给出下面表达式的逆波兰表示（后缀式）：
+	\begin{enumerate}
+		\item a * (-b + c)
+		\item not A or not (C or not D)
+		\item a + b * (c + d / e)
+		\item (A and B) or (not C or D)
+		\item -a + b * (-c + d)
+		\item (A or B) and (C or not D and E)
+		\item if (x + y) * z = 0 then (a + b) ↑ c else a ↑ b ↑ c
+	\end{enumerate}
+	\paragraph{答：}
+	\begin{enumerate}
+		\item a b - c + *
+		\item A not C D not or not or
+		\item a b c d e / + * +
+		\item A B and C not D or or
+		\item a - b c - d + * +
+		\item A B or  C D not E and or and
+		\item x y + z * 0 = a b + c $\uparrow$ a b c $\uparrow$ $uparrow$ ?
+	\end{enumerate}
+	
+	\item[3.] 请将表达式 -(a + b) * (c + d) - (a + b + c) 分别表示成三元式、间接三元式和四元式序列。
+	\paragraph{答：}
+	\begin{table}[H]
+		\centering
+		\caption{三元式}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			~ & op & arg1 & arg2 \\\hline
+			(0) & + & a & b \\
+			(1) & + & c & d \\
+			(2) & + & a & b \\
+			(3) & + & c & (2) \\
+			(4) & - & (0) & ~ \\
+			(5) & * & (4) & (1) \\
+			(6) & - & (5) & (3) \\\hline
+		\end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\caption{四元式}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			~ & op & arg1 & arg2 & result \\\hline
+			(0) & + & a & b & $T_{1}$\\
+			(1) & + & c & d & $T_{2}$\\
+			(2) & + & a & b & $T_{3}$\\
+			(3) & + & c & $T_{3}$ & $T_{4}$ \\
+			(4) & - & $T_{1}$ & ~ & $T_{5}$\\
+			(5) & * & $T_{5}$ & $T_{2}$ & $T_{6}$ \\
+			(6) & - & $T_{6}$ & $T_{4}$ & $T_{7}$ \\\hline
+		\end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\caption{间接三元式}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			~ & op & arg1 & arg2 \\\hline
+			(1) & + & a & b \\
+			(2) & + & c & d \\
+			(3) & + & c & (1) \\
+			(4) & - & (1) & ~ \\
+			(5) & * & (4) & (2) \\
+			(6) & - & (5) & (3) \\\hline
+		\end{tabular}
+	\end{table}
+	间接代码：(1)(2)(3)(1)(4)(5)(6)
+		
+	\item[5.] 按上课所讲方式写出四元式序列：
+	\begin{center}
+		A[i, j] := B[i, j] + C[A[k, l] + D[i + j]]
+	\end{center}
+	其中，数组 A, B 的规模均为 20 × 40，数组 C, D 的长度均为 80。
+	\paragraph{答：}
+	\begin{table}[H]
+		\centering
+		\caption{四元式}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			~ & op & arg1 & arg2 & result \\\hline
+			(0) & - & B & 41 & $T_{1}$ \\
+			(1) & * & i & 40 & $T_{2}$ \\
+			(2) & + & $T_{2}$ & j & $T_{3}$ \\
+			(3) & =[] & $T_{1}[T_{3}]$ & ~ & \textbf{$T_{4}$} \\
+			(4) & - & A & 41 & $T_{5}$ \\
+			(5) & * & k & 40 & $T_{6}$ \\
+			(6) & + & $T_{6}$ & l & $T_{7}$ \\
+			(7) & =[] & $T_{5}[T_{7}]$ & ~ & $T_{8}$ \\
+			(8) & + & i & j & $T_{9}$ \\
+			(9) & - & D & 1 & $T_{10}$ \\
+			(10) & =[] & $T_{10}[T_{9}]$ & ~ & $T_{11}$ \\
+			(11) & + & $T_{8}$ & $T_{11}$ & $T_{12}$ \\
+			(12) & - & C & 1 & $T_{13}$ \\
+			(13) & =[] & $T_{13}[T_{12}]$ & ~ & \textbf{$T_{14}$} \\
+			(14) & - & A & 41 & $T_{15}$ \\
+			(15) & * & i & 40 & $T_{16}$ \\
+			(16) &　+ & $T_{16}$ & j & $T_{17}$ \\
+			(17) & + & $T_{4}$ & $T_{14}$ & $T_{18}$ \\
+			(18) & =[] & $T_{18}$ & ~ & $T_{15}[T_{17}]$ \\\hline
+		\end{tabular}
+	\end{table}
+	
+	\item[6.] 按上课所讲方式，写出布尔式 A or (B and not (C or D)) 的四元式序列。
+	\paragraph{答：}
+	\begin{itemize}
+		\item 通常算法：
+		\begin{table}[H]
+			\centering
+			\caption{四元式}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				~ & op & arg1 & arg2 & result \\\hline
+				(0) & or & C & D & $T_{1}$ \\
+				(1) & not & $T_{1}$ & ~ & $T_{2}$ \\
+				(2) & and & B & $T_{2}$ & $T_{3}$ \\
+				(3) & or & A & $T_{3}$ & $T_{4}$ \\\hline
+			\end{tabular}
+		\end{table}
+	
+		\item 采用优化措施：
+		\begin{table}[H]
+			\centering
+			\caption{四元式}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				~ & op & arg1 & arg2 & result \\\hline
+				(1) & jnz & A & ~ & 0 \\
+				(2) & j & ~ & ~ & 3 \\
+				(3) & jz & B & ~ & 1 \\
+				(4) & j & ~ & ~ & 5 \\
+				(5) & jnz & C & ~ & 3 \\
+				(6) & j & ~ & ~ & 7 \\
+				(7) & jnz & D & ~ & 5 \\
+			\end{tabular}
+		\end{table}
+	\end{itemize}
+	
+	\item[7.] 按上课所讲方式，把下面的语句翻译成四元式序列：
+	\begin{lstlisting}
+	while A < C and B < D do
+	if A = 1 then C := C + 1 else
+	while A <= D do A := A + 2;
+	\end{lstlisting}
+	\paragraph{答：}
+	\begin{table}[H]
+		\centering
+		\caption{四元式}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			~ & op & arg1 & arg2 & result \\\hline
+			(1) & j>= & A & C & 0 \\
+			(2) & j & ~ & ~ & 3 \\
+			(3) & j>= & B & D & 1 \\
+			(4) & j & ~ & ~ & 5 \\
+			(5) & j!= & A & 1 & 9\\
+			(6) & j & ~ & ~ & 7 \\
+			(7) & + & C & 1 & $T_{1}$ \\
+			(8) & = & $T_{1}$ & ~ & C \\
+			(9) & j> & A & D & 1 \\
+			(10) & j & ~ & ~ & 11 \\
+			(11) & + & A & 2 & $T_{2}$ \\
+			(12) & = & $T_{2}$ & ~ & A \\
+			(13) & j & ~ & ~ & 9 \\
+			(14) & j & ~ & ~ & 1 \\\hline
+		\end{tabular}
+	\end{table}
+\end{enumerate}
+
+\end{document}
